@@ -6902,17 +6902,21 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mvoze\\.nuget\\packages\\": {}
+    "C:\\Users\\mvoze\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Developer\\CMSX\\CMSX\\CadastroGenerico\\CadastroGenerico.csproj",
+      "projectUniqueName": "T:\\Developer\\RepositorioEstudos\\CMSX\\CMSX\\CadastroGenerico\\CadastroGenerico.csproj",
       "projectName": "CadastroGenerico",
-      "projectPath": "D:\\Developer\\CMSX\\CMSX\\CadastroGenerico\\CadastroGenerico.csproj",
+      "projectPath": "T:\\Developer\\RepositorioEstudos\\CMSX\\CMSX\\CadastroGenerico\\CadastroGenerico.csproj",
       "packagesPath": "C:\\Users\\mvoze\\.nuget\\packages\\",
-      "outputPath": "D:\\Developer\\CMSX\\CMSX\\CadastroGenerico\\obj\\",
+      "outputPath": "T:\\Developer\\RepositorioEstudos\\CMSX\\CMSX\\CadastroGenerico\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
         "C:\\Users\\mvoze\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -6921,7 +6925,6 @@
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6969,7 +6972,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
