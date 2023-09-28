@@ -1,0 +1,91 @@
+﻿@model mvcAlivre.Models.Texto
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Texto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumTexto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumTexto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeTexto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeTexto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DtInclusao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DtInclusao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QtdeDownload)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QtdeDownload)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrlTexto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrlTexto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TamTexto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TamTexto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormTexto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormTexto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SenhaTexto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SenhaTexto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SitTexto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SitTexto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

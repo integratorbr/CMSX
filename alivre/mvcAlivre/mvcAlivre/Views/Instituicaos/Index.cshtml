@@ -1,0 +1,61 @@
+﻿@model IEnumerable<mvcAlivre.Models.Instituicao>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeInstituicao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UfInstituicao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CidInstituicao)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeInstituicao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UfInstituicao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CidInstituicao)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NumInstituicao }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NumInstituicao }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NumInstituicao })
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="conteinar">
+                @foreach (var camp in item.Campus)
+                { 
+                <div class="row">
+                    <div class="col-lg-3">
+                        @Html.ActionLink("Ver Campus", "Show","Campus", new {inst = camp.NumInstituicao, id = camp.NumCampus},null)
+                        @camp.NomeCampus
+                    </div>
+                </div>
+                }
+            </div>
+        </td>
+    </tr>
+}
+
+</table>

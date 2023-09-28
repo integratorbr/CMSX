@@ -1,0 +1,140 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CMSWEB", "CMSWEB", "{B138CD11-0863-4D7F-BE45-44FE9C23CF1C}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		ProjectReferences = "{55e1c4c0-6b2b-4054-84be-1fe3ca0b31cf}|CMSDAL.dll;{4c3dd2c6-3864-4ef2-a841-49c86058906d}|CMSBLL.dll;{EFB82B05-637F-4B2D-A9B2-2D63F17621C5}|ICMS.dll;{babc5658-6afd-4f8e-81f1-434553663d99}|Uol.PagSeguro.dll;{896B5BD7-6068-4EE1-B3B7-E98C70081DCA}|CMSXEF.dll;{bdd66a40-60ac-461d-8d23-705687b3bc04}|cmsxControls.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/CMSWEB"
+		Debug.AspNetCompiler.PhysicalPath = "CMSWEB\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\CMSWEB\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "true"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/CMSWEB"
+		Release.AspNetCompiler.PhysicalPath = "CMSWEB\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\CMSWEB\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "true"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "29241"
+		VWDDynamicPort = "true"
+		SlnRelativePath = "CMSWEB\"
+		DefaultWebSiteLanguage = "Visual Basic"
+		StartServerOnDebug = "false"
+	EndProjectSection
+	ProjectSection(ProjectDependencies) = postProject
+		{EFB82B05-637F-4B2D-A9B2-2D63F17621C5} = {EFB82B05-637F-4B2D-A9B2-2D63F17621C5}
+		{55E1C4C0-6B2B-4054-84BE-1FE3CA0B31CF} = {55E1C4C0-6B2B-4054-84BE-1FE3CA0B31CF}
+		{4C3DD2C6-3864-4EF2-A841-49C86058906D} = {4C3DD2C6-3864-4EF2-A841-49C86058906D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSBLL", "CMSBLL\CMSBLL.csproj", "{4C3DD2C6-3864-4EF2-A841-49C86058906D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSDAL", "CMSDAL\CMSDAL.csproj", "{55E1C4C0-6B2B-4054-84BE-1FE3CA0B31CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICMS", "ICMS\ICMS.csproj", "{EFB82B05-637F-4B2D-A9B2-2D63F17621C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uol.PagSeguro", "CMSPAGSEG\Uol.PagSeguro\Uol.PagSeguro.csproj", "{BABC5658-6AFD-4F8E-81F1-434553663D99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSXEF", "CMSXEF\CMSXEF.csproj", "{896B5BD7-6068-4EE1-B3B7-E98C70081DCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSocket", "WSocket\WSocket.csproj", "{37AFB0CC-7883-40DF-AA00-43710CBD829C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cmsxControls", "..\CControls\cmsxControls\cmsxControls\cmsxControls.csproj", "{BDD66A40-60AC-461D-8D23-705687B3BC04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroGenerico", "CadastroGenerico\CadastroGenerico.csproj", "{C1E3701E-6329-4810-B41E-2665405314AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B138CD11-0863-4D7F-BE45-44FE9C23CF1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B138CD11-0863-4D7F-BE45-44FE9C23CF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B138CD11-0863-4D7F-BE45-44FE9C23CF1C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B138CD11-0863-4D7F-BE45-44FE9C23CF1C}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{4C3DD2C6-3864-4EF2-A841-49C86058906D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C3DD2C6-3864-4EF2-A841-49C86058906D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C3DD2C6-3864-4EF2-A841-49C86058906D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C3DD2C6-3864-4EF2-A841-49C86058906D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55E1C4C0-6B2B-4054-84BE-1FE3CA0B31CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55E1C4C0-6B2B-4054-84BE-1FE3CA0B31CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55E1C4C0-6B2B-4054-84BE-1FE3CA0B31CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55E1C4C0-6B2B-4054-84BE-1FE3CA0B31CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFB82B05-637F-4B2D-A9B2-2D63F17621C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB82B05-637F-4B2D-A9B2-2D63F17621C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB82B05-637F-4B2D-A9B2-2D63F17621C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB82B05-637F-4B2D-A9B2-2D63F17621C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BABC5658-6AFD-4F8E-81F1-434553663D99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BABC5658-6AFD-4F8E-81F1-434553663D99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BABC5658-6AFD-4F8E-81F1-434553663D99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BABC5658-6AFD-4F8E-81F1-434553663D99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{896B5BD7-6068-4EE1-B3B7-E98C70081DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{896B5BD7-6068-4EE1-B3B7-E98C70081DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{896B5BD7-6068-4EE1-B3B7-E98C70081DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{896B5BD7-6068-4EE1-B3B7-E98C70081DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37AFB0CC-7883-40DF-AA00-43710CBD829C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37AFB0CC-7883-40DF-AA00-43710CBD829C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37AFB0CC-7883-40DF-AA00-43710CBD829C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37AFB0CC-7883-40DF-AA00-43710CBD829C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDD66A40-60AC-461D-8D23-705687B3BC04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDD66A40-60AC-461D-8D23-705687B3BC04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDD66A40-60AC-461D-8D23-705687B3BC04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDD66A40-60AC-461D-8D23-705687B3BC04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1E3701E-6329-4810-B41E-2665405314AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1E3701E-6329-4810-B41E-2665405314AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1E3701E-6329-4810-B41E-2665405314AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1E3701E-6329-4810-B41E-2665405314AC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD558BDA-F292-404F-B18D-C3040947CD72}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 10
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://flameit.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CMSBLL\\CMSBLL.csproj
+		SccProjectName1 = CMSBLL
+		SccLocalPath1 = CMSBLL
+		SccProjectUniqueName2 = CMSDAL\\CMSDAL.csproj
+		SccProjectName2 = CMSDAL
+		SccLocalPath2 = CMSDAL
+		SccProjectUniqueName3 = CMSPAGSEG\\Uol.PagSeguro\\Uol.PagSeguro.csproj
+		SccProjectName3 = CMSPAGSEG/Uol.PagSeguro
+		SccLocalPath3 = CMSPAGSEG\\Uol.PagSeguro
+		SccWebProject4 = true
+		SccProjectUniqueName4 = CMSWEB
+		SccProjectName4 = CMSWEB
+		SccLocalPath4 = CMSWEB
+		SccProjectEnlistmentChoice4 = 2
+		SccProjectUniqueName5 = CMSXEF\\CMSXEF.csproj
+		SccProjectName5 = CMSXEF
+		SccLocalPath5 = CMSXEF
+		SccProjectUniqueName6 = ICMS\\ICMS.csproj
+		SccProjectName6 = ICMS
+		SccLocalPath6 = ICMS
+		SccProjectUniqueName7 = WSocket\\WSocket.csproj
+		SccProjectName7 = WSocket
+		SccLocalPath7 = WSocket
+		SccProjectUniqueName8 = ..\\CControls\\cmsxControls\\cmsxControls\\cmsxControls.csproj
+		SccProjectName8 = ../CControls/cmsxControls/cmsxControls
+		SccLocalPath8 = ..\\CControls\\cmsxControls\\cmsxControls
+		SccProjectUniqueName9 = CadastroGenerico\\CadastroGenerico.csproj
+		SccProjectName9 = CadastroGenerico
+		SccLocalPath9 = CadastroGenerico
+	EndGlobalSection
+EndGlobal

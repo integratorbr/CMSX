@@ -1,0 +1,46 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "bdd66a40-60ac-461d-8d23-705687b3bc04": {
+      "ProjectGuid": "bdd66a40-60ac-461d-8d23-705687b3bc04",
+      "DisplayName": "cmsxControls",
+      "ColorIndex": 0
+    },
+    "4c3dd2c6-3864-4ef2-a841-49c86058906d": {
+      "ProjectGuid": "4c3dd2c6-3864-4ef2-a841-49c86058906d",
+      "DisplayName": "CMSBLL",
+      "ColorIndex": 1
+    },
+    "b138cd11-0863-4d7f-be45-44fe9c23cf1c": {
+      "ProjectGuid": "b138cd11-0863-4d7f-be45-44fe9c23cf1c",
+      "DisplayName": "CMSWEB",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Arquivos Diversos",
+      "ColorIndex": -1
+    },
+    "55e1c4c0-6b2b-4054-84be-1fe3ca0b31cf": {
+      "ProjectGuid": "55e1c4c0-6b2b-4054-84be-1fe3ca0b31cf",
+      "DisplayName": "CMSDAL",
+      "ColorIndex": 3
+    },
+    "896b5bd7-6068-4ee1-b3b7-e98c70081dca": {
+      "ProjectGuid": "896b5bd7-6068-4ee1-b3b7-e98c70081dca",
+      "DisplayName": "CMSXEF",
+      "ColorIndex": 4
+    },
+    "efb82b05-637f-4b2d-a9b2-2d63f17621c5": {
+      "ProjectGuid": "efb82b05-637f-4b2d-a9b2-2d63f17621c5",
+      "DisplayName": "ICMS",
+      "ColorIndex": 5
+    },
+    "c1e3701e-6329-4810-b41e-2665405314ac": {
+      "ProjectGuid": "c1e3701e-6329-4810-b41e-2665405314ac",
+      "DisplayName": "CadastroGenerico",
+      "ColorIndex": 6
+    }
+  },
+  "NextColorIndex": 7
+}

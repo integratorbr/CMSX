@@ -1,0 +1,43 @@
+﻿@model mvcAlivre.Models.Instituicao
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Instituicao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeInstituicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeInstituicao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UfInstituicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UfInstituicao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CidInstituicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CidInstituicao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NumInstituicao }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

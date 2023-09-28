@@ -1,0 +1,6 @@
+D:\Developer\CMSX\CControls\cmsxControls\cmsxControls\bin\Debug\cmsxControls.dll
+D:\Developer\CMSX\CControls\cmsxControls\cmsxControls\bin\Debug\cmsxControls.pdb
+D:\Developer\CMSX\CControls\cmsxControls\cmsxControls\obj\Debug\cmsxControls.csproj.CoreCompileInputs.cache
+D:\Developer\CMSX\CControls\cmsxControls\cmsxControls\obj\Debug\cmsxControls.dll
+D:\Developer\CMSX\CControls\cmsxControls\cmsxControls\obj\Debug\cmsxControls.pdb
+D:\Developer\CMSX\CControls\cmsxControls\cmsxControls\obj\Debug\cmsxControls.csproj.AssemblyReference.cache

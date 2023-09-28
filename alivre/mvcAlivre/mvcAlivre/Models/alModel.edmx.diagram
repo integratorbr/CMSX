@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6a0b29f2058142ae845af95cc3f77181" Name="Diagram1">
+        <EntityTypeShape EntityType="cainaprova_1Model.AC_Atividade" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.AC_Atividade_Realizada" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.AC_Atividade_Turma" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.AC_Bloqueio" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.AC_CargaHoraria" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.AC_Coordenador" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.AC_Instituto" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.AC_Periodo_Letivo" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.AC_Relatorio" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.AC_Tipo" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.AC_Turno" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.AC_VisaoAlunos" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Alertas_a_emitir" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Alertas_Lidos" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Amigo" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Aviso" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Campanha" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Campus" Width="1.5" PointX="25.625" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Categoria" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Curso" Width="1.5" PointX="22.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Disc_Aluno" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Disciplina" Width="1.5" PointX="22.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Download" Width="1.5" PointX="12.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.dtproperties" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Envio_Vaga" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Evento" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.FaleConosco" Width="1.5" PointX="4.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Filme" Width="1.5" PointX="6.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Forum" Width="1.5" PointX="8.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.ForumProf" Width="1.5" PointX="14.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.ForumProfInsc" Width="1.5" PointX="14.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.ForumProfMsg" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Frases" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.IndLivro" Width="1.5" PointX="0.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.InscrEvento" Width="1.5" PointX="16.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Instituicao" Width="1.5" PointX="22.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Links" Width="1.5" PointX="16.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.ListaNegra" Width="1.5" PointX="16.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Livro" Width="1.5" PointX="16.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.LivroInd" Width="1.5" PointX="12.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Monitore" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Navegacao" Width="1.5" PointX="18.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.NewsLetter" Width="1.5" PointX="18.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Palestrante" Width="1.5" PointX="18.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Parceiros" Width="1.5" PointX="18.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Participante" Width="1.5" PointX="2.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Pedido" Width="1.5" PointX="8.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.PesqUnip" Width="1.5" PointX="18.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Postagem" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.QtdInst" Width="1.5" PointX="4.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Texto" Width="1.5" PointX="20.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Topico" Width="1.5" PointX="20.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Turma" Width="1.5" PointX="25.625" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Usuario" Width="1.5" PointX="12.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.UsuarioFB" Width="1.5" PointX="20.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Vagas" Width="1.5" PointX="14.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.alivre_ctrl_session" Width="1.5" PointX="20.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Estado" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cainaprova_1Model.Pais" Width="1.5" PointX="0.75" PointY="23.75" />
+        <AssociationConnector Association="cainaprova_1Model.InstituicaoCampus" />
+        <AssociationConnector Association="cainaprova_1Model.CampusCurso" />
+        <AssociationConnector Association="cainaprova_1Model.CursoTurma" />
+        <AssociationConnector Association="cainaprova_1Model.TurmaDisciplina" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
