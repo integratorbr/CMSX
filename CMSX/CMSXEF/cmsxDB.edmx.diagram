@@ -31,7 +31,7 @@
         <EntityTypeShape EntityType="cmsxDBModel.newsletter" Width="1.5" PointX="6.75" PointY="13.75" />
         <EntityTypeShape EntityType="cmsxDBModel.relmoduloaplicacao" Width="1.5" PointX="8.75" PointY="13.75" />
         <EntityTypeShape EntityType="cmsxDBModel.relmoduloconfaplicacao" Width="2.875" PointX="10.75" PointY="13.75" />
-        <EntityTypeShape EntityType="cmsxDBModel.relusuarioaplicacao" Width="1.5" PointX="12.75" PointY="13.75" />
+        <EntityTypeShape EntityType="cmsxDBModel.relusuarioaplicacao" Width="1.5" PointX="14.125" PointY="16.5" />
         <EntityTypeShape EntityType="cmsxDBModel.tipocotacao" Width="1.5" PointX="14.75" PointY="0.75" />
         <EntityTypeShape EntityType="cmsxDBModel.tipoenvio" Width="1.5" PointX="0.75" PointY="14.75" />
         <EntityTypeShape EntityType="cmsxDBModel.socialmedia" Width="1.5" PointX="15.375" PointY="3.75" />
