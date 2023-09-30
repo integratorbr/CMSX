@@ -31,6 +31,8 @@ namespace CMSBLL
                     return MySqlCon();
                 case "EntityDB":
                     return EntityCon();
+                case "PGSql":
+                    return EntityCon();
                 default:
                     return SqlServerCon();
             }
@@ -68,6 +70,22 @@ namespace CMSBLL
 
         }
 
+
+        public KeyValuePair<IDbConnection, KeyValuePair<IDbCommand, IDataParameter[]>> PGSql()
+        {
+            var conn = new pg();
+            var cmd = new MySqlCommand();
+            var parm = new List<MySqlParameter>();
+
+            for (int x = 0; x < NumParms; x++)
+            {
+                parm.Add(new MySqlParameter());
+            }
+
+            conn.ConnectionString = System.Configuration.ConfigurationManager.AppSettings["mysqlconn"].ToString();
+            return new KeyValuePair<IDbConnection, KeyValuePair<IDbCommand, IDataParameter[]>>(conn, new KeyValuePair<IDbCommand, IDataParameter[]>(cmd, parm.ToArray()));
+
+        }
 
         public KeyValuePair<IDbConnection, KeyValuePair<IDbCommand, IDataParameter[]>> EntityCon()
         {
