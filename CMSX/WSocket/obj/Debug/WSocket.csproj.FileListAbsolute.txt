@@ -5,3 +5,10 @@ D:\Developer\CMSX\CMSX\WSocket\obj\Debug\WSocket.csproj.AssemblyReference.cache
 D:\Developer\CMSX\CMSX\WSocket\obj\Debug\WSocket.csproj.CoreCompileInputs.cache
 D:\Developer\CMSX\CMSX\WSocket\obj\Debug\WSocket.dll
 D:\Developer\CMSX\CMSX\WSocket\obj\Debug\WSocket.pdb
+T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\WSocket.dll.config
+T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\WSocket.dll
+T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\WSocket.pdb
+T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\obj\Debug\WSocket.csproj.AssemblyReference.cache
+T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\obj\Debug\WSocket.csproj.CoreCompileInputs.cache
+T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\obj\Debug\WSocket.dll
+T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\obj\Debug\WSocket.pdb

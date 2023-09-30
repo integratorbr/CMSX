@@ -5,6 +5,8 @@ using System.Data.SqlClient;
 using System.Data.Entity;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using Npgsql;
+using NpgsqlTypes;
 using System.Configuration;
 using ICMS;
 using CMSXEF;
@@ -32,7 +34,7 @@ namespace CMSBLL
                 case "EntityDB":
                     return EntityCon();
                 case "PGSql":
-                    return EntityCon();
+                    return PGSql();
                 default:
                     return SqlServerCon();
             }
@@ -73,16 +75,16 @@ namespace CMSBLL
 
         public KeyValuePair<IDbConnection, KeyValuePair<IDbCommand, IDataParameter[]>> PGSql()
         {
-            var conn = new pg();
-            var cmd = new MySqlCommand();
-            var parm = new List<MySqlParameter>();
+            var conn = new NpgsqlConnection(System.Configuration.ConfigurationManager.AppSettings["PGSql"].ToString());
+            var cmd = new NpgsqlCommand();
+            var parm = new List<NpgsqlParameter>();
 
             for (int x = 0; x < NumParms; x++)
             {
-                parm.Add(new MySqlParameter());
+                parm.Add(new NpgsqlParameter());
             }
 
-            conn.ConnectionString = System.Configuration.ConfigurationManager.AppSettings["mysqlconn"].ToString();
+            conn.ConnectionString = System.Configuration.ConfigurationManager.AppSettings["PGSql"].ToString();
             return new KeyValuePair<IDbConnection, KeyValuePair<IDbCommand, IDataParameter[]>>(conn, new KeyValuePair<IDbCommand, IDataParameter[]>(cmd, parm.ToArray()));
 
         }

@@ -6,3 +6,12 @@ D:\Developer\CMSX\CMSX\CMSPAGSEG\Uol.PagSeguro\obj\Debug\Uol.PagSeguro.csproj.As
 D:\Developer\CMSX\CMSX\CMSPAGSEG\Uol.PagSeguro\obj\Debug\Uol.PagSeguro.csproj.CoreCompileInputs.cache
 D:\Developer\CMSX\CMSX\CMSPAGSEG\Uol.PagSeguro\obj\Debug\Uol.PagSeguro.dll
 D:\Developer\CMSX\CMSX\CMSPAGSEG\Uol.PagSeguro\obj\Debug\Uol.PagSeguro.pdb
+T:\Developer\CMSX\CMSWEB\Bin\Uol.PagSeguro.dll.config
+T:\Developer\CMSX\CMSWEB\Bin\Uol.PagSeguro.dll
+T:\Developer\CMSX\CMSWEB\Bin\Uol.PagSeguro.pdb
+T:\Developer\CMSX\CMSWEB\Bin\Uol.PagSeguro.XML
+T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSPAGSEG\Uol.PagSeguro\obj\Debug\Uol.PagSeguro.csproj.AssemblyReference.cache
+T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSPAGSEG\Uol.PagSeguro\obj\Debug\Uol.PagSeguro.csproj.CoreCompileInputs.cache
+T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSPAGSEG\Uol.PagSeguro\obj\Debug\Uol.PagSeguro.dll
+T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSPAGSEG\Uol.PagSeguro\obj\Debug\Uol.PagSeguro.pdb
+T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSPAGSEG\Uol.PagSeguro\obj\Debug\Uol.PagSeguro.csproj.CopyComplete
