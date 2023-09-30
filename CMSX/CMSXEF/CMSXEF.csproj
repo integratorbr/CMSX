@@ -315,6 +315,7 @@
       <LastGenOutput>cmsxDB.Context.cs</LastGenOutput>
     </Content>
     <Content Include="cmsxDB.edmx.sql" />
+    <Content Include="cmsxDB.postgresql.sql" />
     <Content Include="cmsxDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>cmsxDB.edmx</DependentUpon>
