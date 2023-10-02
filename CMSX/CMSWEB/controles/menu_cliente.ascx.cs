@@ -6,7 +6,7 @@ using System.Data;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Script.Serialization;
-using CMSBLL;
+using CMSXBLL;
 
 public partial class controles_menu_cliente : BaseControl
 {
@@ -59,7 +59,7 @@ public partial class controles_menu_cliente : BaseControl
 
         if (e.Item.ItemType == ListViewItemType.DataItem)
         {
-            CMSBLL.Areas  _area = (Areas)e.Item.DataItem;
+            CMSXBLL.Areas  _area = (Areas)e.Item.DataItem;
 
             _obj.parms = 2;
             _app = (Aplicacao)Session["cliente"];

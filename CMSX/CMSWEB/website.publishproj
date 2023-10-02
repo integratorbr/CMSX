@@ -42,9 +42,9 @@ Copyright (C) Microsoft Corporation. All rights reserved.
     </AssemblyAttributes>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CMSBLL\CMSBLL.csproj">
+    <ProjectReference Include="..\CMSXBLL\CMSXBLL.csproj">
       <Project>{4C3DD2C6-3864-4EF2-A841-49C86058906D}</Project>
-      <Name>CMSBLL</Name>
+      <Name>CMSXBLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\CMSDAL\CMSDAL.csproj">
       <Project>{55E1C4C0-6B2B-4054-84BE-1FE3CA0B31CF}</Project>

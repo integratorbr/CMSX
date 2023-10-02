@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CMSBLL;
-using ICMS;
+using CMSXBLL;
+using ICMSX;
 
 public partial class controles_ucDetalheResort : BaseControl
 {

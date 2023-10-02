@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Xml;
 using System.Configuration;
 using System.Text;
-using CMSBLL;
+using CMSXBLL;
 
 public partial class formulario : BasePage
 {

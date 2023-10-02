@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Dynamic;
 using System.IO;
-using CMSBLL;
+using CMSXBLL;
 
 public partial class galeriamake : BasePage
 {

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
-using CMSBLL;
+using CMSXBLL;
 using System.Data;
 
 public partial class controles_ucadrotator : BaseControl

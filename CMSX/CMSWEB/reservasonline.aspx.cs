@@ -9,7 +9,7 @@ using System.Configuration;
 using System.ComponentModel;
 using System.Net;
 using System.Net.Mail;
-using CMSBLL;
+using CMSXBLL;
 
 
 public partial class reservasonline : BasePage

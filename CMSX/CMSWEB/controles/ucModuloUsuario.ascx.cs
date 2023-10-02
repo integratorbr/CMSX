@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CMSBLL;
-using CMSBLL.Repositorio;
+using CMSXBLL;
+using CMSXBLL.Repositorio;
 
 public partial class controles_ucModuloUsuario : BaseControl
 {

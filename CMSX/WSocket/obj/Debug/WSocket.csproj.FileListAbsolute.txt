@@ -11,13 +11,6 @@ T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\WSocket.pdb
 T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\BouncyCastle.Crypto.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\EntityFramework.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\EntityFramework.SqlServer.dll
-T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\EntityFramework.xml
-T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\EntityFramework.SqlServer.xml
-T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\obj\Debug\WSocket.csproj.AssemblyReference.cache
-T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\obj\Debug\WSocket.csproj.CoreCompileInputs.cache
-T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\obj\Debug\WSocket.csproj.CopyComplete
-T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\obj\Debug\WSocket.dll
-T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\obj\Debug\WSocket.pdb
 T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\Microsoft.Extensions.Configuration.Abstractions.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\Microsoft.Extensions.Primitives.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\System.Buffers.dll
@@ -25,6 +18,8 @@ T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\System.Memory.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\System.Numerics.Vectors.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\System.Runtime.CompilerServices.Unsafe.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\System.ValueTuple.dll
+T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\EntityFramework.xml
+T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\EntityFramework.SqlServer.xml
 T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\Microsoft.Extensions.Configuration.Abstractions.xml
 T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\Microsoft.Extensions.Primitives.xml
 T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\System.Buffers.xml
@@ -32,3 +27,8 @@ T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\System.Memory.xml
 T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\System.Numerics.Vectors.xml
 T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\System.Runtime.CompilerServices.Unsafe.xml
 T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\bin\System.ValueTuple.xml
+T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\obj\Debug\WSocket.csproj.AssemblyReference.cache
+T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\obj\Debug\WSocket.csproj.CoreCompileInputs.cache
+T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\obj\Debug\WSocket.csproj.CopyComplete
+T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\obj\Debug\WSocket.dll
+T:\Developer\RepositorioEstudos\CMSX\CMSX\WSocket\obj\Debug\WSocket.pdb

@@ -9,8 +9,8 @@ using System.IO;
 using System.Security;
 using System.Security.Principal;
 using System.Security.AccessControl;
-using CMSBLL;
-using CMSBLL.Repositorio;
+using CMSXBLL;
+using CMSXBLL.Repositorio;
 using System.Text;
 using System.Web.Services;
 using System.Web.Script.Services;
@@ -23,7 +23,7 @@ using System.Configuration;
 using System.Net;
 using System.Net.Mail;
 using System.Net.Http;
-using CMSXEF;
+using CMSXDB;
 using System.Threading;
 
 /// <summary>

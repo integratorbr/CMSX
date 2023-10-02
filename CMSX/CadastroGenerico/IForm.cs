@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CadastroGenerico
 {
 	public class FormCampo
-	{
+	{ 
 		public string Nome { get; set; }
 		public string Valor { get; set; }
 	}

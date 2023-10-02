@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
-using CMSBLL;
+using CMSXBLL;
 
 public partial class controles_ucgaleria : BaseControl
 {

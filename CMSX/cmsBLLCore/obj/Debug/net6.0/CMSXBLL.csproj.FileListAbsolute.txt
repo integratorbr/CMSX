@@ -1,0 +1,5 @@
+T:\Developer\RepositorioEstudos\CMSX\CMSX\cmsBLLCore\obj\Debug\net6.0\CMSXBLL.csproj.AssemblyReference.cache
+T:\Developer\RepositorioEstudos\CMSX\CMSX\cmsBLLCore\obj\Debug\net6.0\CMSXBLL.GeneratedMSBuildEditorConfig.editorconfig
+T:\Developer\RepositorioEstudos\CMSX\CMSX\cmsBLLCore\obj\Debug\net6.0\CMSXBLL.AssemblyInfoInputs.cache
+T:\Developer\RepositorioEstudos\CMSX\CMSX\cmsBLLCore\obj\Debug\net6.0\CMSXBLL.AssemblyInfo.cs
+T:\Developer\RepositorioEstudos\CMSX\CMSX\cmsBLLCore\obj\Debug\net6.0\CMSXBLL.csproj.CoreCompileInputs.cache

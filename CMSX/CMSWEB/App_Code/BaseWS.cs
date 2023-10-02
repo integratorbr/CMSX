@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI.WebControls;
-using CMSBLL;
-using CMSBLL.Repositorio;
+using CMSXBLL;
+using CMSXBLL.Repositorio;
 using System.Dynamic;
 using System.Configuration;
 

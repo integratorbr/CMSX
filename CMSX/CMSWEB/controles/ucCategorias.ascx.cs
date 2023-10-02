@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CMSBLL;
+using CMSXBLL;
 using CMSDAL;
 
 public partial class controles_ucCategorias : BaseControl

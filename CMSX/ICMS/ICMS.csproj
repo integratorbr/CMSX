@@ -145,14 +145,14 @@
     <Compile Include="T.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CMSXEF\CMSXEF.csproj">
-      <Project>{896b5bd7-6068-4ee1-b3b7-e98c70081dca}</Project>
-      <Name>CMSXEF</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMSXDB\CMSXDB.csproj">
+      <Project>{ffe514b4-f346-4582-906f-9701cb2bc247}</Project>
+      <Name>CMSXDB</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

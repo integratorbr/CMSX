@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using CMSBLL;
+using CMSXBLL;
 using System.Configuration;
 
 public partial class bootstrap : BaseMasterPage

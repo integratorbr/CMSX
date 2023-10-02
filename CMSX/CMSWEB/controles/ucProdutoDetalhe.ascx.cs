@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-using CMSBLL;
+using CMSXBLL;
 using CMSDAL;
 using Uol.PagSeguro.Constants;
 using Uol.PagSeguro.Domain;
