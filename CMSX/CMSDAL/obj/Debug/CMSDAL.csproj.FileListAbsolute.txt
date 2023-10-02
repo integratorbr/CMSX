@@ -46,6 +46,7 @@ T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\BouncyCastle.Cryptogr
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\CMSXEF.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\EntityFramework.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\EntityFramework.SqlServer.dll
+T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\EntityFramework6.Npgsql.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\Google.Protobuf.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\ICMS.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\K4os.Compression.LZ4.dll
@@ -81,6 +82,7 @@ T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\BouncyCastle.Crypto.x
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\BouncyCastle.Cryptography.xml
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\EntityFramework.xml
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\EntityFramework.SqlServer.xml
+T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\EntityFramework6.Npgsql.xml
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\Google.Protobuf.pdb
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\Google.Protobuf.xml
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\K4os.Compression.LZ4.xml
@@ -112,3 +114,7 @@ T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\obj\Debug\CMSDAL.csproj.CoreCom
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\obj\Debug\CMSDAL.csproj.CopyComplete
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\obj\Debug\CMSDAL.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\obj\Debug\CMSDAL.pdb
+T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\Microsoft.Extensions.Primitives.dll
+T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSDAL\bin\Debug\Microsoft.Extensions.Primitives.xml
