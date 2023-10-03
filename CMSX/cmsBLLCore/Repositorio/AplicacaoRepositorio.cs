@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -269,7 +270,7 @@ namespace CMSXBLL.Repositorio
             }
         }
 
-        public List<Aplicacao> Helper(IEnumerable<CMSXEF.aplicacao> appdata)
+        public List<Aplicacao> Helper(IEnumerable<CMSXDB.aplicacao> appdata)
         {
             throw new NotImplementedException();
         }

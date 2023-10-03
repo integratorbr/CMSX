@@ -54,9 +54,9 @@ Copyright (C) Microsoft Corporation. All rights reserved.
       <Project>{BABC5658-6AFD-4F8E-81F1-434553663D99}</Project>
       <Name>Uol.PagSeguro</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CMSXEF\CMSXEF.csproj">
+    <ProjectReference Include="..\CMSXDB\CMSXDB.csproj">
       <Project>{896B5BD7-6068-4EE1-B3B7-E98C70081DCA}</Project>
-      <Name>CMSXEF</Name>
+      <Name>CMSXDB</Name>
     </ProjectReference>
     <ProjectReference Include="..\ICMS\ICMS.csproj">
       <Project>{EFB82B05-637F-4B2D-A9B2-2D63F17621C5}</Project>

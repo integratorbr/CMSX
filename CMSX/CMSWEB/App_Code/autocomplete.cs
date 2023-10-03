@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -32,15 +33,15 @@ public class autocomplete : BaseWS {
 
     [WebMethod]
     [System.Web.Script.Services.ScriptMethod(ResponseFormat = System.Web.Script.Services.ResponseFormat.Json)]
-    public string GetCompletionList(string prefixText, int count)
+    public void GetCompletionList(string prefixText, int count)
     {
         _obj.parms = 1;
         _obj.urlcliente = prefixText;
         _apprepo.MakeConnection(_obj);
-        
-        var apps = _apprepo.ListaApp();
 
-        return JsonConvert.SerializeObject(apps);
+        //var apps = _apprepo.ListaApp();// _apprepo.ListaApp();
+
+        //return JsonConvert.SerializeObject(apps);
     
     }
 
@@ -53,8 +54,8 @@ public class autocomplete : BaseWS {
         _apprepo.MakeConnection(_obj);
 
         var p = new retJson();
-        var ret = _apprepo.ListaApp();
-        p.count = ret.Count;
+        /*var ret = _apprepo.ListaApp();
+        p.count = ret.Count();
         p.valid=true;
 
         string jsonformatstring = JsonConvert.SerializeObject(p, Formatting.Indented);
@@ -62,7 +63,7 @@ public class autocomplete : BaseWS {
         HttpContext.Current.Response.Clear();
         HttpContext.Current.Response.ContentType = "application/json; charset=utf-8";
         HttpContext.Current.Response.Write(jsonformatstring);
-        HttpContext.Current.Response.End();
+        HttpContext.Current.Response.End();*/
 
         //return;
     }

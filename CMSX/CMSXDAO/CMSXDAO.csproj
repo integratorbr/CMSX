@@ -9,6 +9,9 @@
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.1.0" />
     <PackageReference Include="MySQL.Data.Entities" Version="6.8.3" />
+    <PackageReference Include="Npgsql" Version="7.0.6" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
   <ItemGroup>

@@ -391,7 +391,7 @@ public partial class appMake : BasePage
 
     protected void CarregaRedes()
     {
-        using (CMSXEF.cmsxDBEntities ctxt = new CMSXEF.cmsxDBEntities())
+        using (CMSXDB.cmsxDBEntities ctxt = new CMSXDB.cmsxDBEntities())
         {
             var lst = from s in ctxt.dict_socialmedia
                       select s;

@@ -10,7 +10,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CMSWEB", "CMSWEB\", "{B138C
 		SccLocalPath = "SAK"
 		SccProvider = "SAK"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
-		ProjectReferences = "{babc5658-6afd-4f8e-81f1-434553663d99}|Uol.PagSeguro.dll;{bdd66a40-60ac-461d-8d23-705687b3bc04}|cmsxControls.dll;{c956466f-d163-4371-aa5d-25ca0538b2c9}|CMSXBLL.dll;"
+		ProjectReferences = "{babc5658-6afd-4f8e-81f1-434553663d99}|Uol.PagSeguro.dll;{bdd66a40-60ac-461d-8d23-705687b3bc04}|cmsxControls.dll;{c956466f-d163-4371-aa5d-25ca0538b2c9}|CMSXBLL.dll;{ffe514b4-f346-4582-906f-9701cb2bc247}|CMSXDB.dll;{ae48c504-d8db-434d-b781-a9d6f76bd9dd}|ICMSX.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/CMSWEB"
 		Debug.AspNetCompiler.PhysicalPath = "CMSWEB\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\CMSWEB\"
@@ -40,13 +40,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cmsxControls", "..\CControl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CadastroGenerico", "CadastroGenerico\CadastroGenerico.csproj", "{C1E3701E-6329-4810-B41E-2665405314AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSXBLL", "cmsBLLCore\CMSXBLL.csproj", "{C956466F-D163-4371-AA5D-25CA0538B2C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSXBLL", "cmsBLLCore\CMSXBLL.csproj", "{C956466F-D163-4371-AA5D-25CA0538B2C9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AE48C504-D8DB-434D-B781-A9D6F76BD9DD} = {AE48C504-D8DB-434D-B781-A9D6F76BD9DD}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSXDB", "CMSXDB\CMSXDB.csproj", "{FFE514B4-F346-4582-906F-9701CB2BC247}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSXDB", "CMSXDB\CMSXDB.csproj", "{FFE514B4-F346-4582-906F-9701CB2BC247}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSXDAO", "CMSXDAO\CMSXDAO.csproj", "{72C64108-4889-43F2-87CA-3DAB83FB509C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSXDAO", "CMSXDAO\CMSXDAO.csproj", "{72C64108-4889-43F2-87CA-3DAB83FB509C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICMSX", "ICMSX\ICMSX.csproj", "{AE48C504-D8DB-434D-B781-A9D6F76BD9DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICMSX", "ICMSX\ICMSX.csproj", "{AE48C504-D8DB-434D-B781-A9D6F76BD9DD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSXAngularUI", "CMSXAngularUI\CMSXAngularUI.csproj", "{1103930F-4411-4C6E-8BC1-0D5CD1845D24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -90,6 +95,10 @@ Global
 		{AE48C504-D8DB-434D-B781-A9D6F76BD9DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE48C504-D8DB-434D-B781-A9D6F76BD9DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE48C504-D8DB-434D-B781-A9D6F76BD9DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1103930F-4411-4C6E-8BC1-0D5CD1845D24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1103930F-4411-4C6E-8BC1-0D5CD1845D24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1103930F-4411-4C6E-8BC1-0D5CD1845D24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1103930F-4411-4C6E-8BC1-0D5CD1845D24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

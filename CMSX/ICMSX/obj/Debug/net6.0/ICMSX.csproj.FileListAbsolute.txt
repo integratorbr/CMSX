@@ -1,10 +1,15 @@
 T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\bin\Debug\net6.0\ICMSX.deps.json
 T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\bin\Debug\net6.0\ICMSX.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\bin\Debug\net6.0\ICMSX.pdb
+T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\bin\Debug\net6.0\CMSXDB.dll
+T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\bin\Debug\net6.0\CMSXDB.pdb
+T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\bin\Debug\net6.0\CMSXDB.dll.config
+T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\obj\Debug\net6.0\ICMSX.csproj.AssemblyReference.cache
 T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\obj\Debug\net6.0\ICMSX.GeneratedMSBuildEditorConfig.editorconfig
 T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\obj\Debug\net6.0\ICMSX.AssemblyInfoInputs.cache
 T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\obj\Debug\net6.0\ICMSX.AssemblyInfo.cs
 T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\obj\Debug\net6.0\ICMSX.csproj.CoreCompileInputs.cache
+T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\obj\Debug\net6.0\ICMSX.csproj.CopyComplete
 T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\obj\Debug\net6.0\ICMSX.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\obj\Debug\net6.0\refint\ICMSX.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\obj\Debug\net6.0\ICMSX.pdb
