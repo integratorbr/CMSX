@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Castle.Windsor;
 using Castle.MicroKernel.Registration;
 using CMSXBLL.Repositorio;
-using CMSXDB;
+using CMXDBContextContext;
 
 namespace CMSXBLL
 {
-    public class Aplicacao:aplicacao
+    public class Aplicacao:CMXDBContext.aplicacao
     {
         public Guid AplicacaoId { get; set; }
         public string Nome { get; set; }

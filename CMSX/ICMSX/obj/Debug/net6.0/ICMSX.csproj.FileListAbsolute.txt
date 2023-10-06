@@ -14,3 +14,5 @@ T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\obj\Debug\net6.0\ICMSX.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\obj\Debug\net6.0\refint\ICMSX.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\obj\Debug\net6.0\ICMSX.pdb
 T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\obj\Debug\net6.0\ref\ICMSX.dll
+T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\bin\Debug\net6.0\ICMSX.runtimeconfig.json
+T:\Developer\RepositorioEstudos\CMSX\CMSX\ICMSX\obj\Debug\net6.0\ICMSX.genruntimeconfig.cache

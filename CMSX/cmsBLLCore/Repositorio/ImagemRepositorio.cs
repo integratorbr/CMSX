@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.Entity;
 using System.Linq;
-using CMSXDB;
+using CMXDBContext;
 
 namespace CMSXBLL.Repositorio
 {
@@ -25,7 +25,7 @@ namespace CMSXBLL.Repositorio
         public void MakeConnection(dynamic prop)
         {
             //dal = container.Resolve<>();
-            db = new cmsxDBEntities();
+            db = new CMXDBContextEntities();
             string bc = prop.banco;
             int parm = prop.parms;
             lprop = prop;
@@ -43,7 +43,7 @@ namespace CMSXBLL.Repositorio
             string imgId = lprop.imagemId.ToString();
             string arId = lprop.areaid.ToString();
 
-            using (cmsxDBEntities dbLoc = new cmsxDBEntities())
+            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
             {
                 ///limpando as imagens previas
                 imagem imgold = (from im in dbLoc.imagem
@@ -70,7 +70,7 @@ namespace CMSXBLL.Repositorio
 
         public List<Imagem> Galeria()
         {
-            using (cmsxDBEntities dbloc = new cmsxDBEntities())
+            using (CMXDBContextEntities dbloc = new CMXDBContextEntities())
             {
                 string pId = lprop.areaid.ToString();
                 IEnumerable<imagem> lst = from img in db.imagem
@@ -87,7 +87,7 @@ namespace CMSXBLL.Repositorio
 
         public List<Imagem> GaleriaParentId()
         {
-            using(cmsxDBEntities dbloc = new cmsxDBEntities())
+            using(CMXDBContextEntities dbloc = new CMXDBContextEntities())
             {
                 string pId = lprop.pId.ToString();
                 IEnumerable<imagem> lst = from img in db.imagem
@@ -137,7 +137,7 @@ namespace CMSXBLL.Repositorio
 
         public void InsereImagemGaleria()
         {
-            using (cmsxDBEntities dbloc = new cmsxDBEntities())
+            using (CMXDBContextEntities dbloc = new CMXDBContextEntities())
             {
                 imagem im = new imagem();
                 Imagem obj = (Imagem)lprop.imgObj;

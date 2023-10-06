@@ -3,35 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CMSWEB", "CMSWEB\", "{B138CD11-0863-4D7F-BE45-44FE9C23CF1C}"
-	ProjectSection(WebsiteProperties) = preProject
-		SccProjectName = "SAK"
-		SccAuxPath = "SAK"
-		SccLocalPath = "SAK"
-		SccProvider = "SAK"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
-		ProjectReferences = "{babc5658-6afd-4f8e-81f1-434553663d99}|Uol.PagSeguro.dll;{bdd66a40-60ac-461d-8d23-705687b3bc04}|cmsxControls.dll;{c956466f-d163-4371-aa5d-25ca0538b2c9}|CMSXBLL.dll;{ffe514b4-f346-4582-906f-9701cb2bc247}|CMSXDB.dll;{ae48c504-d8db-434d-b781-a9d6f76bd9dd}|ICMSX.dll;"
-		Debug.AspNetCompiler.VirtualPath = "/CMSWEB"
-		Debug.AspNetCompiler.PhysicalPath = "CMSWEB\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\CMSWEB\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "true"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/CMSWEB"
-		Release.AspNetCompiler.PhysicalPath = "CMSWEB\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\CMSWEB\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "true"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "29241"
-		VWDDynamicPort = "true"
-		SlnRelativePath = "CMSWEB\"
-		DefaultWebSiteLanguage = "Visual Basic"
-		StartServerOnDebug = "false"
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uol.PagSeguro", "CMSPAGSEG\Uol.PagSeguro\Uol.PagSeguro.csproj", "{BABC5658-6AFD-4F8E-81F1-434553663D99}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSocket", "WSocket\WSocket.csproj", "{37AFB0CC-7883-40DF-AA00-43710CBD829C}"
@@ -45,13 +16,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSXBLL", "cmsBLLCore\CMSXB
 		{AE48C504-D8DB-434D-B781-A9D6F76BD9DD} = {AE48C504-D8DB-434D-B781-A9D6F76BD9DD}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSXDB", "CMSXDB\CMSXDB.csproj", "{FFE514B4-F346-4582-906F-9701CB2BC247}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSXDAO", "CMSXDAO\CMSXDAO.csproj", "{72C64108-4889-43F2-87CA-3DAB83FB509C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICMSX", "ICMSX\ICMSX.csproj", "{AE48C504-D8DB-434D-B781-A9D6F76BD9DD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSXAngularUI", "CMSXAngularUI\CMSXAngularUI.csproj", "{1103930F-4411-4C6E-8BC1-0D5CD1845D24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSXDBContext", "CMXDBContext\CMSXDBContext.csproj", "{83BF0602-2E66-4EA4-A4F4-9FA66DDCF145}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,10 +28,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B138CD11-0863-4D7F-BE45-44FE9C23CF1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B138CD11-0863-4D7F-BE45-44FE9C23CF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B138CD11-0863-4D7F-BE45-44FE9C23CF1C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{B138CD11-0863-4D7F-BE45-44FE9C23CF1C}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{BABC5658-6AFD-4F8E-81F1-434553663D99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BABC5658-6AFD-4F8E-81F1-434553663D99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BABC5658-6AFD-4F8E-81F1-434553663D99}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -83,10 +48,6 @@ Global
 		{C956466F-D163-4371-AA5D-25CA0538B2C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C956466F-D163-4371-AA5D-25CA0538B2C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C956466F-D163-4371-AA5D-25CA0538B2C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FFE514B4-F346-4582-906F-9701CB2BC247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FFE514B4-F346-4582-906F-9701CB2BC247}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FFE514B4-F346-4582-906F-9701CB2BC247}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FFE514B4-F346-4582-906F-9701CB2BC247}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72C64108-4889-43F2-87CA-3DAB83FB509C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72C64108-4889-43F2-87CA-3DAB83FB509C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72C64108-4889-43F2-87CA-3DAB83FB509C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -95,10 +56,10 @@ Global
 		{AE48C504-D8DB-434D-B781-A9D6F76BD9DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE48C504-D8DB-434D-B781-A9D6F76BD9DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE48C504-D8DB-434D-B781-A9D6F76BD9DD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1103930F-4411-4C6E-8BC1-0D5CD1845D24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1103930F-4411-4C6E-8BC1-0D5CD1845D24}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1103930F-4411-4C6E-8BC1-0D5CD1845D24}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1103930F-4411-4C6E-8BC1-0D5CD1845D24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83BF0602-2E66-4EA4-A4F4-9FA66DDCF145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83BF0602-2E66-4EA4-A4F4-9FA66DDCF145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83BF0602-2E66-4EA4-A4F4-9FA66DDCF145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83BF0602-2E66-4EA4-A4F4-9FA66DDCF145}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

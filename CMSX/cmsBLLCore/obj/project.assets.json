@@ -438,18 +438,6 @@
           }
         }
       },
-      "System.Data.Entity.Repository/2.0.0.1": {
-        "type": "package",
-        "dependencies": {
-          "EntityFramework": "5.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Data.Entity.Repository.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Data.Entity.Repository.dll": {}
-        }
-      },
       "System.Data.SqlClient/4.8.1": {
         "type": "package",
         "dependencies": {
@@ -703,27 +691,9 @@
           }
         }
       },
-      "CMSXDB/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Castle.Windsor": "6.0.0",
-          "Microsoft.EntityFrameworkCore": "7.0.11",
-          "System.Data.Entity.Repository": "2.0.0.1"
-        },
-        "compile": {
-          "bin/placeholder/CMSXDB.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CMSXDB.dll": {}
-        }
-      },
       "ICMSX/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "CMSXDB": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/ICMSX.dll": {}
         },
@@ -1556,18 +1526,6 @@
         "version.txt"
       ]
     },
-    "System.Data.Entity.Repository/2.0.0.1": {
-      "sha512": "MnYUvHPcOAUGIyOzKR4A6Kd918VkCjKpfFCQoNdjY6LO4y1QwrwWZtdmOs2B3wozTYfJgPWKpIeW3ZHn+ylgrA==",
-      "type": "package",
-      "path": "system.data.entity.repository/2.0.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/System.Data.Entity.Repository.dll",
-        "system.data.entity.repository.2.0.0.1.nupkg.sha512",
-        "system.data.entity.repository.nuspec"
-      ]
-    },
     "System.Data.SqlClient/4.8.1": {
       "sha512": "HKLykcv6eZLbLnSMnlQ6Os4+UAmFE+AgYm92CTvJYeTOBtOYusX3qu8OoGhFrnKZax91UcLcDo5vPrqvJUTSNQ==",
       "type": "package",
@@ -2046,11 +2004,6 @@
         "version.txt"
       ]
     },
-    "CMSXDB/1.0.0": {
-      "type": "project",
-      "path": "../CMSXDB/CMSXDB.csproj",
-      "msbuildProject": "../CMSXDB/CMSXDB.csproj"
-    },
     "ICMSX/1.0.0": {
       "type": "project",
       "path": "../ICMSX/ICMSX.csproj",
@@ -2059,13 +2012,12 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "CMSXDB >= 1.0.0",
       "Castle.Core >= 5.1.1",
       "Castle.Windsor >= 6.0.0",
       "EntityFramework >= 6.4.4",
       "ICMSX >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.11",
-      "System.Data.Entity.Repository >= 2.0.0.1"
+      "T:\\Developer\\RepositorioEstudos\\CMSX\\CMSX\\CMXDBContext\\CMXDBContextContext.csproj"
     ]
   },
   "packageFolders": {
@@ -2100,8 +2052,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "T:\\Developer\\RepositorioEstudos\\CMSX\\CMSX\\CMSXDB\\CMSXDB.csproj": {
-              "projectPath": "T:\\Developer\\RepositorioEstudos\\CMSX\\CMSX\\CMSXDB\\CMSXDB.csproj"
+            "T:\\Developer\\RepositorioEstudos\\CMSX\\CMSX\\CMXDBContext\\CMXDBContextContext.csproj": {
+              "projectPath": "T:\\Developer\\RepositorioEstudos\\CMSX\\CMSX\\CMXDBContext\\CMXDBContextContext.csproj"
             },
             "T:\\Developer\\RepositorioEstudos\\CMSX\\CMSX\\ICMSX\\ICMSX.csproj": {
               "projectPath": "T:\\Developer\\RepositorioEstudos\\CMSX\\CMSX\\ICMSX\\ICMSX.csproj"
@@ -2134,10 +2086,6 @@
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[7.0.11, )"
-          },
-          "System.Data.Entity.Repository": {
-            "target": "Package",
-            "version": "[2.0.0.1, )"
           }
         },
         "imports": [
@@ -2162,11 +2110,10 @@
   },
   "logs": [
     {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "O pacote 'System.Data.Entity.Repository 2.0.0.1' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
-      "libraryId": "System.Data.Entity.Repository",
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Não é possível encontrar o projeto 'T:\\Developer\\RepositorioEstudos\\CMSX\\CMSX\\CMXDBContext\\CMXDBContextContext.csproj'. Verifique se a referência do projeto é válida e se o arquivo de projeto existe.",
+      "libraryId": "T:\\Developer\\RepositorioEstudos\\CMSX\\CMSX\\CMXDBContext\\CMXDBContextContext.csproj",
       "targetGraphs": [
         "net6.0"
       ]

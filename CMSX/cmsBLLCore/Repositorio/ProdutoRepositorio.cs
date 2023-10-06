@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data;
 using ICMSX;
-using CMSXDB;
+using CMXDBContext;
 using System.Dynamic;
 
 namespace CMSXBLL.Repositorio
@@ -17,7 +17,7 @@ namespace CMSXBLL.Repositorio
         public void MakeConnection(dynamic prop)
         {
             dal = container.Resolve<IProdutoDAL>();
-            db = new cmsxDBEntities();
+            db = new CMXDBContextEntities();
             string bc = prop.banco;
             int parm = prop.parms;
             lprop = prop;
@@ -41,7 +41,7 @@ namespace CMSXBLL.Repositorio
 
         public void CriaProduto(Produto prod)
         {
-            using (cmsxDBEntities db = new cmsxDBEntities())
+            using (CMXDBContextEntities db = new CMXDBContextEntities())
             {
                 produto p = new produto();
                 p.AplicacaoId = prod.AplicacaoId.ToString();
@@ -156,7 +156,7 @@ namespace CMSXBLL.Repositorio
 
         public void InativaProduto(Produto prod)
         {
-            using (cmsxDBEntities dbLoc = new cmsxDBEntities())
+            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
             {
                 string prodid = prod.ProdutoId.ToString();
                 ///limpando as imagens previas

@@ -9,7 +9,7 @@ using Npgsql;
 using NpgsqlTypes;
 using System.Configuration;
 using ICMSX;
-using CMSXDB;
+using CMXDBContext;
 
 namespace CMSXBLL
 {
@@ -91,7 +91,7 @@ namespace CMSXBLL
 
         public KeyValuePair<IDbConnection, KeyValuePair<IDbCommand, IDataParameter[]>> EntityCon()
         {
-            var conn = new cmsxDBEntities().Database.Connection;
+            var conn = new CMXDBContextEntities().Database.Connection;
             var cmd = conn.CreateCommand();
             var parm = new List<SqlParameter>();
 

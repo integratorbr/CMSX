@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using ICMSX;
 using System.Dynamic;
 using System.Linq;
-using CMSXDB;
+using CMXDBContextContext;
 using System.Reflection;
 
 namespace CMSXBLL.Repositorio
@@ -35,7 +35,7 @@ namespace CMSXBLL.Repositorio
             Aplicacao app = new Aplicacao();
 
             string appId = propLocal.appId.ToString();
-            using (cmsxDBEntities dbLoc = new cmsxDBEntities())
+            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
             {
                 var applst = (from a in dbLoc.aplicacao
                               where a.AplicacaoId == appId
@@ -110,7 +110,7 @@ namespace CMSXBLL.Repositorio
         {
             List<Aplicacao> aplicacoes = new List<Aplicacao>();// Helper(dal.ListaAplicacao());
             string user = propLocal.admin;
-            using (cmsxDBEntities dbLoc = new cmsxDBEntities())
+            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
             {
                 var applst = from a in dbLoc.aplicacao
                              where a.IdUsuarioInicio == user
@@ -199,7 +199,7 @@ namespace CMSXBLL.Repositorio
             bool retval = false;
             try
             {
-                using (cmsxDBEntities dbLoc = new cmsxDBEntities())
+                using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
                 {
                     aplicacao ap = new aplicacao();
                     Aplicacao app = (Aplicacao)propLocal.aplicacao;
@@ -240,7 +240,8 @@ namespace CMSXBLL.Repositorio
         {
             //dal.EditaAplicacao();
             Aplicacao app = (Aplicacao)propLocal.aplicacao;
-            using (cmsxDBEntities dbLoc = new cmsxDBEntities())
+            using(C)
+            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
             {
                 string apid = app.AplicacaoId.ToString();
                 ///limpando as imagens previas
@@ -270,7 +271,7 @@ namespace CMSXBLL.Repositorio
             }
         }
 
-        public List<Aplicacao> Helper(IEnumerable<CMSXDB.aplicacao> appdata)
+        public List<Aplicacao> Helper(IEnumerable<CMXDBContextContext.aplicacao> appdata)
         {
             throw new NotImplementedException();
         }
@@ -304,7 +305,7 @@ namespace CMSXBLL.Repositorio
             string url = string.Empty;
 
             Aplicacao app = (Aplicacao)propLocal.aplicacao;
-            using (cmsxDBEntities dbLoc = new cmsxDBEntities())
+            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
             {
                 string apid = app.AplicacaoId.ToString();
                 ///limpando as imagens previas
@@ -327,7 +328,7 @@ namespace CMSXBLL.Repositorio
             string url = string.Empty;
 
             Aplicacao app = (Aplicacao)propLocal.aplicacao;
-            using (cmsxDBEntities dbLoc = new cmsxDBEntities())
+            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
             {
                 string apid = app.AplicacaoId.ToString();
                 ///limpando as imagens previas

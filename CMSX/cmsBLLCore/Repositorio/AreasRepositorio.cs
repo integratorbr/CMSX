@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using ICMSX;
 using System.Dynamic;
-using CMSXDB;
+using CMXDBContext;
 
 namespace CMSXBLL.Repositorio
 {
@@ -158,7 +158,7 @@ namespace CMSXBLL.Repositorio
         public string AreaRapida()
         {
             var areaObj = lprop.area;
-            using (cmsxDBEntities dbLoc = new cmsxDBEntities())
+            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
             {
                 areas narea = new areas();
 

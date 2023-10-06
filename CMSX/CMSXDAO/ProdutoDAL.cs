@@ -1,6 +1,6 @@
 ﻿using System.Data;
 using ICMSX;
-using CMSXDB;
+using CMXDBContext;
 
 namespace CMSXDAO
 {
@@ -47,7 +47,7 @@ namespace CMSXDAO
         public IEnumerable<produto> ListaProduto()
         {
             string appid = _localProps.appid;
-            cmsxDBEntities db = new cmsxDBEntities();
+            CMXDBContextEntities db = new CMXDBContextEntities();
             IEnumerable<produto> lst = from prod in db.produto
                                        where prod.AplicacaoId == appid
                                        select prod;

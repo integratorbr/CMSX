@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using ICMSX;
 using System.Linq;
-using CMSXDB;
+using CMXDBContext;
 using System.Dynamic;
 
 
@@ -40,7 +40,7 @@ namespace CMSXBLL.Repositorio
         {
 
             Conteudo cnt = (Conteudo)propLocal.conteudo;
-            using (cmsxDBEntities dbLoc = new cmsxDBEntities())
+            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
             {
                 string cid = cnt.ConteudoId.ToString();
                 ///limpando as imagens previas
@@ -81,7 +81,7 @@ namespace CMSXBLL.Repositorio
         public void CreateContent()
         {
             Conteudo cnt = (Conteudo)propLocal.conteudo;
-            using (cmsxDBEntities dbLoc = new cmsxDBEntities())
+            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
             {
                 string cid = cnt.ConteudoId.ToString();
 
@@ -142,7 +142,7 @@ namespace CMSXBLL.Repositorio
         {
             List<Conteudo> lcont = new List<Conteudo>();
             string contid = propLocal.conteudoId.ToString();
-            using (cmsxDBEntities dbLoc = new cmsxDBEntities())
+            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
             {
                 var clst = from c in dbLoc.conteudo
                            join i in dbLoc.imagem
@@ -210,7 +210,7 @@ namespace CMSXBLL.Repositorio
         {
             string appId = propLocal.appId.ToString();
             List<Conteudo> lstcon = new List<Conteudo>();
-            using (cmsxDBEntities dbLoc = new cmsxDBEntities())
+            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
             {
                 var clst = from c in dbLoc.conteudo
                            join i in dbLoc.imagem

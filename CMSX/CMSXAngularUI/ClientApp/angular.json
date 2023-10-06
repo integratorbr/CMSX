@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "CMSXAngularUI"
+  "defaultProject": "CMSXAngularUI",
+  "cli": {
+    "analytics": false
+  }
 }

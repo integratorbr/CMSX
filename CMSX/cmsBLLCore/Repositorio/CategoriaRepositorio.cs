@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using ICMSX;
 using System.Linq;
-using CMSXDB;
+using CMXDBContext;
 using System.Dynamic;
 
 namespace CMSXBLL.Repositorio
@@ -18,7 +18,7 @@ namespace CMSXBLL.Repositorio
         public void MakeConnection(dynamic prop)
         {
             dal = container.Resolve<ICategoriaDAL>();
-            db = new cmsxDBEntities();
+            db = new CMXDBContextEntities();
             string bc = prop.banco;
             int parm = prop.parms;
             lprop = prop;
@@ -109,7 +109,7 @@ namespace CMSXBLL.Repositorio
         public void CategoriaRapida()
         {
             var catObj = lprop.categoria;
-            using (cmsxDBEntities dbLoc = new cmsxDBEntities())
+            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
             {
 
                 categoria ncat = new categoria();

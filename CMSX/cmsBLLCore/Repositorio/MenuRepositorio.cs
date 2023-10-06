@@ -5,7 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using ICMSX;
 using System.Dynamic;
-using CMSXDB;
+using CMXDBContext;
 
 namespace CMSXBLL.Repositorio
 {

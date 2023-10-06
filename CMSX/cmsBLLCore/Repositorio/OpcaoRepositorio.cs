@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Data.SqlClient;
 using ICMSX;
-using CMSXDB;
+using CMXDBContext;
 using System.Dynamic;
 
 namespace CMSXBLL.Repositorio
@@ -21,7 +21,7 @@ namespace CMSXBLL.Repositorio
             string bc = prop.banco;
             int parm = prop.parms;
             lprop = prop;
-            db = new cmsxDBEntities();
+            db = new CMXDBContextEntities();
             dal.MakeConnection((ExpandoObject)prop);
         }
 
@@ -65,7 +65,7 @@ namespace CMSXBLL.Repositorio
 
         public void CriaOpcao(Opcao atp)
         {
-            using (cmsxDBEntities dbLoc = new cmsxDBEntities())
+            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
             {
                 opcao at = new opcao();
                 at.Nome         = atp.Nome;

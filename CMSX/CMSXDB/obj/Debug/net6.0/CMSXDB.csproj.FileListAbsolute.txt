@@ -11,3 +11,5 @@ T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDB\obj\Debug\net6.0\CMSXDB.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDB\obj\Debug\net6.0\refint\CMSXDB.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDB\obj\Debug\net6.0\CMSXDB.pdb
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDB\obj\Debug\net6.0\ref\CMSXDB.dll
+T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDB\bin\Debug\net6.0\CMSXDB.runtimeconfig.json
+T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDB\obj\Debug\net6.0\CMSXDB.genruntimeconfig.cache
