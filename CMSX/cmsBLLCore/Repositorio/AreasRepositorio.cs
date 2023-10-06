@@ -5,7 +5,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using ICMSX;
 using System.Dynamic;
-using CMXDBContext;
+using CMSXData;
+using CMSXData.Models;
 
 namespace CMSXBLL.Repositorio
 {
@@ -158,25 +159,25 @@ namespace CMSXBLL.Repositorio
         public string AreaRapida()
         {
             var areaObj = lprop.area;
-            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
+            using (CmsxDbContext dbLoc = new CmsxDbContext())
             {
-                areas narea = new areas();
+                var narea = new CMSXData.Models.Area();
 
-                string aId = areaObj.AreaId.ToString();
-                string apid = areaObj.AplicacaoId.ToString();
+                var aId = areaObj.AreaId;
+                var apid = areaObj.AplicacaoId;
 
                 narea.Nome = areaObj.Nome;
                 narea.Descricao = areaObj.Descricao;
-                narea.AreaId = aId;
-                narea.AplicacaoId = apid;
+                narea.Areaid = aId;
+                narea.Aplicacaoid = apid;
                 narea.Url = areaObj.Url;
-                narea.MenuCentral = 1;
-                narea.posicao = areaObj.Posicao;
-                narea.DataInicial = DateTime.Now;
-                narea.TipoArea = areaObj.TipoArea;
+                narea.Menucentral = 1;
+                narea.Posicao = areaObj.Posicao;
+                narea.Datainicial = DateTime.Now;
+                narea.Tipoarea = areaObj.TipoArea;
                 narea.Imagem = 0;
 
-                dbLoc.areas.Add(narea);
+                dbLoc.Areas.Add(narea);
                 dbLoc.SaveChanges();
             }
 

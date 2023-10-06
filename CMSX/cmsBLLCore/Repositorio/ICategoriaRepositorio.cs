@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using CMXDBContext;
+using CMSXData;
 
 namespace CMSXBLL.Repositorio
 {
@@ -15,7 +15,7 @@ namespace CMSXBLL.Repositorio
         List<Categoria> ListaCategoriaPai();
         List<Categoria> ListaSubCategoria();
         List<Categoria> Helper(DataTable appdata);
-        List<Categoria> Helper(IEnumerable<categoria> appdata);
+        List<Categoria> Helper(IEnumerable<Categoria> appdata);
         void InativaCategorias();
     }
 }

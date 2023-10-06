@@ -6,8 +6,10 @@ using System.Data.SqlClient;
 using ICMSX;
 using System.Dynamic;
 using System.Linq;
-using CMXDBContextContext;
+using CMSXData;
+using CMSXData.Models;
 using System.Reflection;
+using Microsoft.EntityFrameworkCore;
 
 namespace CMSXBLL.Repositorio
 {
@@ -35,35 +37,35 @@ namespace CMSXBLL.Repositorio
             Aplicacao app = new Aplicacao();
 
             string appId = propLocal.appId.ToString();
-            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
+            using (CmsxDbContext dbLoc = new CmsxDbContext())
             {
-                var applst = (from a in dbLoc.aplicacao
-                              where a.AplicacaoId == appId
+                var applst = (from a in dbLoc.Aplicacaos
+                              where a.Aplicacaoid.ToString() == appId
                               select new
                               {
-                                  AplicacaoId = a.AplicacaoId,
+                                  AplicacaoId = a.Aplicacaoid,
                                   Nome = a.Nome,
                                   Url = a.Url,
-                                  DataInicio = a.DataInicio,
-                                  DataFinal = a.DataFinal,
-                                  IdUsuarioInicio = a.IdUsuarioInicio,
-                                  IdUsuarioFim = a.IdUsuarioFim,
-                                  PagSeguroToken = a.PagSeguroToken,
-                                  LayoutChoose = a.LayoutChoose,
+                                  DataInicio = a.Datainicio,
+                                  DataFinal = a.Datafinal,
+                                  IdUsuarioInicio = a.Idusuarioinicio,
+                                  IdUsuarioFim = a.Idusuariofim,
+                                  PagSeguroToken = a.Pagsegurotoken,
+                                  LayoutChoose = a.Layoutchoose,
                                   Posicao = a.Posicao,
-                                  mailUser = a.mailUser,
-                                  mailPassword = a.mailPassword,
-                                  mailServer = a.mailServer,
-                                  mailPort = a.mailPort,
-                                  isSecure = a.isSecure,
-                                  pageFacebook = a.pageFacebook,
-                                  pageInstagram = a.pageInstagram,
-                                  pageLinkedin = a.pageLinkedin,
-                                  pageFlicker = a.pageFlicker,
-                                  pagePinterest = a.pagePinterest,
-                                  pageTwitter = a.pageTwitter,
-                                  googleAdSense = a.googleAdSense,
-                                  header = a.header
+                                  mailUser = a.Mailuser,
+                                  mailPassword = a.Mailpassword,
+                                  mailServer = a.Mailserver,
+                                  mailPort = a.Mailport,
+                                  isSecure = a.Issecure,
+                                  pageFacebook = a.Pagefacebook,
+                                  pageInstagram = a.Pageinstagram,
+                                  pageLinkedin = a.Pagelinkedin,
+                                  pageFlicker = a.Pageflicker,
+                                  pagePinterest = a.Pagepinterest,
+                                  pageTwitter = a.Pagetwitter,
+                                  googleAdSense = a.Ogleadsense,
+                                  header = a.Header
                               });
 
                 if (applst.Count() >= 1)
@@ -72,20 +74,20 @@ namespace CMSXBLL.Repositorio
                     {
                         app = (new Aplicacao()
                         {
-                            AplicacaoId = new System.Guid(a.AplicacaoId),
+                            AplicacaoId = new System.Guid(a.AplicacaoId.ToString()),
                             Nome = a.Nome,
                             Url = a.Url,
                             DataFinal = a.DataFinal.ToString(),
                             PagSeguroToken = a.PagSeguroToken,
                             Layout = a.LayoutChoose,
-                            mailUser = a.mailUser,
-                            pageFacebook = a.pageFacebook,
-                            pageInstagram = a.pageInstagram,
-                            pageLinkedin = a.pageLinkedin,
-                            pageFlicker = a.pageFlicker,
-                            pagePinterest = a.pagePinterest,
-                            pageTwitter = a.pageTwitter,
-                            googleAdSense = a.googleAdSense
+                            Mailuser = a.mailUser,
+                            Pagefacebook = a.pageFacebook,
+                            Pageinstagram = a.pageInstagram,
+                            Pagelinkedin = a.pageLinkedin,
+                            Pageflicker = a.pageFlicker,
+                            Pagepinterest = a.pagePinterest,
+                            Pagetwitter = a.pageTwitter,
+                            Ogleadsense = a.googleAdSense
                         });
                     }
                 }
@@ -110,28 +112,28 @@ namespace CMSXBLL.Repositorio
         {
             List<Aplicacao> aplicacoes = new List<Aplicacao>();// Helper(dal.ListaAplicacao());
             string user = propLocal.admin;
-            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
+            using (CmsxDbContext dbLoc = new CmsxDbContext())
             {
-                var applst = from a in dbLoc.aplicacao
-                             where a.IdUsuarioInicio == user
+                var applst = from a in dbLoc.Aplicacaos
+                             where a.Idusuarioinicio == user
                              select new
                              {
-                                 AplicacaoId = a.AplicacaoId,
+                                 AplicacaoId = a.Aplicacaoid,
                                  Nome = a.Nome,
                                  Url = a.Url,
-                                 DataInicio = a.DataInicio,
-                                 DataFinal = a.DataFinal,
-                                 IdUsuarioInicio = a.IdUsuarioInicio,
-                                 IdUsuarioFim = a.IdUsuarioFim,
-                                 PagSeguroToken = a.PagSeguroToken,
-                                 LayoutChoose = a.LayoutChoose,
+                                 DataInicio = a.Datainicio,
+                                 DataFinal = a.Datafinal,
+                                 IdUsuarioInicio = a.Idusuarioinicio,
+                                 IdUsuarioFim = a.Idusuariofim,
+                                 PagSeguroToken = a.Pagsegurotoken,
+                                 LayoutChoose = a.Layoutchoose,
                                  Posicao = a.Posicao,
-                                 mailUser = a.mailUser,
-                                 mailPassword = a.mailPassword,
-                                 mailServer = a.mailServer,
-                                 mailPort = a.mailPort,
-                                 isSecure = a.isSecure,
-                                 header = a.header
+                                 mailUser = a.Mailuser,
+                                 mailPassword = a.Mailpassword,
+                                 mailServer = a.Mailserver,
+                                 mailPort = a.Mailport,
+                                 isSecure = a.Issecure,
+                                 header = a.Header
                              };
                 if (applst.Count() >= 1)
                 {
@@ -139,12 +141,12 @@ namespace CMSXBLL.Repositorio
                     {
                         aplicacoes.Add(new Aplicacao()
                         {
-                            AplicacaoId = new System.Guid(a.AplicacaoId),
+                            AplicacaoId = a.AplicacaoId??new Guid(),
                             Nome = a.Nome,
                             Url = a.Url,
-                            DataFinal = a.DataFinal.ToString(),
+                            DataFinal = a.DataFinal.ToString() ?? new DateTime().ToString(),
                             PagSeguroToken = a.PagSeguroToken,
-                            mailUser = a.mailUser,
+                            Mailuser = a.mailUser,
                             header = a.header
                         });
                     }
@@ -154,9 +156,9 @@ namespace CMSXBLL.Repositorio
                 {
 
                     string appid = app.AplicacaoId.ToString();
-                    var img = (from i in dbLoc.imagem
-                               where i.ParentId == appid &&
-                               i.TipoId == "24a57e31-4ffe-11e1-8664-07b98c902e34"
+                    var img = (from i in dbLoc.Imagems
+                               where i.Parentid == appid &&
+                               i.Tipoid == "24a57e31-4ffe-11e1-8664-07b98c902e34"
                                select i);
 
                     app.ImagemUrl = (img.Count()>=1?img.FirstOrDefault().Url:null);
@@ -180,12 +182,12 @@ namespace CMSXBLL.Repositorio
                 _app.DataFinal = dr["DataFinal"].ToString();
                 if (dr.Table.Columns.Contains("mailUser"))
                 {
-                    _app.mailUser = dr["mailUser"].ToString();
+                    _app.Mailuser = dr["mailUser"].ToString();
                     _app.PagSeguroToken = dr["PagSeguroToken"].ToString();
                 }
                 else
                 {
-                    _app.mailUser = string.Empty;
+                    _app.Mailuser = string.Empty;
                     _app.PagSeguroToken = string.Empty;
                 }
                 applista.Add(_app);
@@ -199,27 +201,27 @@ namespace CMSXBLL.Repositorio
             bool retval = false;
             try
             {
-                using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
+                using (CmsxDbContext dbLoc = new CmsxDbContext())
                 {
-                    aplicacao ap = new aplicacao();
+                    Aplicacao ap = new Aplicacao();
                     Aplicacao app = (Aplicacao)propLocal.aplicacao;
-                    ap.AplicacaoId = app.AplicacaoId.ToString();
+                    ap.AplicacaoId = app.AplicacaoId;
                     ap.Nome = app.Nome;
                     ap.Url = app.Url;
-                    ap.AplicacaoId = app.AplicacaoId.ToString();
-                    ap.IdUsuarioInicio = app.IdUsuarioInicio.ToString();
-                    ap.LayoutChoose = app.LayoutChoose.ToString();
-                    ap.mailUser = app.mailUser;
+                    ap.AplicacaoId = app.AplicacaoId;
+                    ap.Idusuarioinicio = app.Idusuarioinicio;
+                    ap.Layoutchoose = app.Layoutchoose;
+                    ap.Mailuser = app.Mailuser;
                     ap.PagSeguroToken = app.PagSeguroToken.ToString();
-                    ap.pageFacebook = app.pageFacebook;
-                    ap.pageInstagram = app.pageInstagram;
-                    ap.pageLinkedin = app.pageLinkedin;
-                    ap.pageFlicker = app.pageFlicker;
-                    ap.pagePinterest = app.pagePinterest;
-                    ap.pageTwitter = app.pageTwitter;
-                    ap.googleAdSense = app.googleAdSense;
+                    ap.Pagefacebook = app.Pagefacebook;
+                    ap.Pageinstagram = app.Pageinstagram;
+                    ap.Pagelinkedin = app.Pagelinkedin;
+                    ap.Pageflicker = app.Pageflicker;
+                    ap.Pagepinterest = app.Pagepinterest;
+                    ap.Pagetwitter = app.Pagetwitter;
+                    ap.Ogleadsense = app.Ogleadsense;
 
-                    dbLoc.aplicacao.Add(ap);
+                    dbLoc.Aplicacaos.Add(ap);
                     dbLoc.SaveChanges();
                 }
                 retval = true;
@@ -240,19 +242,18 @@ namespace CMSXBLL.Repositorio
         {
             //dal.EditaAplicacao();
             Aplicacao app = (Aplicacao)propLocal.aplicacao;
-            using(C)
-            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
+            using (CmsxDbContext dbLoc = new CmsxDbContext())
             {
-                string apid = app.AplicacaoId.ToString();
+                Guid apid = app.AplicacaoId;
                 ///limpando as imagens previas
-                aplicacao ap = (from a in dbLoc.aplicacao
-                                where a.AplicacaoId == apid
+                var ap = (from a in dbLoc.Aplicacaos
+                                where a.Aplicacaoid == apid
                                 select a).FirstOrDefault();
                 if (ap != null)
                 {
                     ap.Nome = app.Nome;
                     ap.Url = app.Url;
-                    ap.AplicacaoId = apid;
+                    ap.Aplicacaoid = app.Aplicacaoid;/*
                     ap.IdUsuarioInicio = app.IdUsuarioInicio.ToString();
                     ap.LayoutChoose = app.LayoutChoose.ToString();
                     ap.mailUser = app.mailUser;
@@ -262,16 +263,16 @@ namespace CMSXBLL.Repositorio
                     ap.pageFlicker = app.pageFlicker;
                     ap.pagePinterest = app.pagePinterest;
                     ap.pageTwitter = app.pageTwitter;
-                    ap.googleAdSense = app.googleAdSense;
+                    ap.googleAdSense = app.googleAdSense;*/
 
-                    ap.PagSeguroToken = app.PagSeguroToken.ToString();
-                    dbLoc.Entry(ap).State = System.Data.Entity.EntityState.Modified;
+                    ap.Pagsegurotoken = app.PagSeguroToken.ToString();
+                    dbLoc.Entry(ap).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                     dbLoc.SaveChanges();
                 }
             }
         }
 
-        public List<Aplicacao> Helper(IEnumerable<CMXDBContextContext.aplicacao> appdata)
+        public List<Aplicacao> Helper(IEnumerable<Aplicacao> appdata)
         {
             throw new NotImplementedException();
         }
@@ -305,17 +306,17 @@ namespace CMSXBLL.Repositorio
             string url = string.Empty;
 
             Aplicacao app = (Aplicacao)propLocal.aplicacao;
-            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
+            using (CmsxDbContext dbLoc = new CmsxDbContext())
             {
-                string apid = app.AplicacaoId.ToString();
+                Guid apid = app.AplicacaoId;
                 ///limpando as imagens previas
-                aplicacao ap = (from a in dbLoc.aplicacao
-                                where a.AplicacaoId == apid
+                var ap = (from a in dbLoc.Aplicacaos
+                                where a.Aplicacaoid == apid
                                 select a).FirstOrDefault();
                 if (ap != null)
                 {
-                    ap.isActive = true;
-                    dbLoc.Entry(ap).State = System.Data.Entity.EntityState.Modified;
+                    ap.Isactive = true;
+                    dbLoc.Entry(ap).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                     dbLoc.SaveChanges();
                     url = ap.Url;
                 }
@@ -328,16 +329,16 @@ namespace CMSXBLL.Repositorio
             string url = string.Empty;
 
             Aplicacao app = (Aplicacao)propLocal.aplicacao;
-            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
+            using (CmsxDbContext dbLoc = new CmsxDbContext())
             {
-                string apid = app.AplicacaoId.ToString();
+                Guid apid = app.AplicacaoId;
                 ///limpando as imagens previas
-                aplicacao ap = (from a in dbLoc.aplicacao
-                                where a.AplicacaoId == apid
+                var ap = (from a in dbLoc.Aplicacaos
+                                where a.Aplicacaoid == apid
                                 select a).FirstOrDefault();
                 if (ap != null)
                 {
-                    dbLoc.Entry(ap).State = System.Data.Entity.EntityState.Deleted;
+                    dbLoc.Entry(ap).State = EntityState.Modified;
                     dbLoc.SaveChanges();
                     url = ap.Url;
                 }

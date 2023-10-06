@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using Npgsql;
 using NpgsqlTypes;
 using System.Configuration;
 using ICMSX;
-using CMXDBContext;
+using CMSXData;
 
 namespace CMSXBLL
 {
@@ -31,8 +31,8 @@ namespace CMSXBLL
             {
                 case "MySql":
                     return MySqlCon();
-                case "EntityDB":
-                    return EntityCon();
+                /*case "EntityDB":
+                    return EntityCon();*/
                 case "PGSql":
                     return PGSql();
                 default:
@@ -89,9 +89,9 @@ namespace CMSXBLL
 
         }
 
-        public KeyValuePair<IDbConnection, KeyValuePair<IDbCommand, IDataParameter[]>> EntityCon()
+        /*public KeyValuePair<IDbConnection, KeyValuePair<IDbCommand, IDataParameter[]>> EntityCon()
         {
-            var conn = new CMXDBContextEntities().Database.Connection;
+            var conn = new CmsxDbContext().Database.Connection;
             var cmd = conn.CreateCommand();
             var parm = new List<SqlParameter>();
 
@@ -102,7 +102,7 @@ namespace CMSXBLL
 
             conn.ConnectionString = System.Configuration.ConfigurationManager.AppSettings["entityCon"].ToString();
             return new KeyValuePair<IDbConnection, KeyValuePair<IDbCommand, IDataParameter[]>>(conn, new KeyValuePair<IDbCommand, IDataParameter[]>(cmd, parm.ToArray()));
-        }
+        }*/
         #endregion
 
     }

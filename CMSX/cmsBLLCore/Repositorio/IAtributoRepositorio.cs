@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using CMXDBContext;
+using CMSXData;
 
 namespace CMSXBLL.Repositorio
 {
@@ -9,7 +9,7 @@ namespace CMSXBLL.Repositorio
     {
         void MakeConnection(dynamic prop);
         List<Atributo> Helper(DataTable attdata);
-        List<Atributo> Helper(IEnumerable<atributo> lst);
+        List<Atributo> Helper(IEnumerable<Atributo> lst);
         List<Atributo> ListaAtributo();
         List<Atributo> ListaAtributoXProduto();
         void CriaAtributo(Atributo at);

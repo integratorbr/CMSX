@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CMXDBContext\CMXDBContextContext.csproj" />
+    <ProjectReference Include="..\CMSXData\CMSXData.csproj" />
     <ProjectReference Include="..\ICMSX\ICMSX.csproj" />
   </ItemGroup>
 

@@ -1,12 +1,12 @@
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\bin\Debug\net6.0\CMSXDAO.dll.config
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\bin\Debug\net6.0\CMSXDAO.deps.json
+T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\bin\Debug\net6.0\CMSXDAO.runtimeconfig.json
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\bin\Debug\net6.0\CMSXDAO.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\bin\Debug\net6.0\CMSXDAO.pdb
-T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\bin\Debug\net6.0\CMSXDB.dll
+T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\bin\Debug\net6.0\CMSXData.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\bin\Debug\net6.0\ICMSX.dll
-T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\bin\Debug\net6.0\CMSXDB.pdb
-T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\bin\Debug\net6.0\CMSXDB.dll.config
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\bin\Debug\net6.0\ICMSX.pdb
+T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\bin\Debug\net6.0\CMSXData.pdb
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\obj\Debug\net6.0\CMSXDAO.csproj.AssemblyReference.cache
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\obj\Debug\net6.0\CMSXDAO.GeneratedMSBuildEditorConfig.editorconfig
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\obj\Debug\net6.0\CMSXDAO.AssemblyInfoInputs.cache
@@ -16,4 +16,5 @@ T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\obj\Debug\net6.0\CMSXDAO.cspro
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\obj\Debug\net6.0\CMSXDAO.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\obj\Debug\net6.0\refint\CMSXDAO.dll
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\obj\Debug\net6.0\CMSXDAO.pdb
+T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\obj\Debug\net6.0\CMSXDAO.genruntimeconfig.cache
 T:\Developer\RepositorioEstudos\CMSX\CMSX\CMSXDAO\obj\Debug\net6.0\ref\CMSXDAO.dll

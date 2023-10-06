@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using CMXDBContext;
+using CMSXData;
 
 namespace CMSXBLL.Repositorio
 {
@@ -9,7 +9,7 @@ namespace CMSXBLL.Repositorio
     {
         void MakeConnection(dynamic prop);
         List<Opcao> Helper(DataTable attdata);
-        List<Opcao> Helper(IEnumerable<opcao> lst);
+        List<Opcao> Helper(IEnumerable<Opcao> lst);
         List<Opcao> ListaOpcao();
         List<Opcao> ListaOpcaoXAtributo();
         void CriaOpcao(Opcao op);

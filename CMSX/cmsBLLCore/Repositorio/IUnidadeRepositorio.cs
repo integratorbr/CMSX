@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CMXDBContext;
+using CMSXData;
 
 namespace CMSXBLL.Repositorio
 {
@@ -11,6 +11,6 @@ namespace CMSXBLL.Repositorio
         void MakeConnection(dynamic prop);
         void CriaNovaUnidade();
         List<Unidade> ListaUnidade();
-        List<Unidade> Helper(IEnumerable<unidades> appdata);
+        List<Unidade> Helper(IEnumerable<Unidade> appdata);
     }
 }

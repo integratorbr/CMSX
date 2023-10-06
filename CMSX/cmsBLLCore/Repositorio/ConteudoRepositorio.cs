@@ -4,7 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 using ICMSX;
 using System.Linq;
-using CMXDBContext;
+using CMSXData;
+using CMSXData.Models;
 using System.Dynamic;
 
 
@@ -40,37 +41,47 @@ namespace CMSXBLL.Repositorio
         {
 
             Conteudo cnt = (Conteudo)propLocal.conteudo;
-            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
+            using (CmsxDbContext dbLoc = new CmsxDbContext())
             {
                 string cid = cnt.ConteudoId.ToString();
                 ///limpando as imagens previas
-                conteudo ct = (from c in dbLoc.conteudo
-                                where c.ConteudoId == cid
-                                select c).FirstOrDefault();
+                Conteudo ct = (from c in dbLoc.Conteudos
+                                where c.Conteudoid == cid
+                                select new Conteudo()
+                                {
+                                    CategoriaId = new Guid(c.Cateriaid),
+                                    Titulo = c.Titulo,
+                                    Texto = c.Texto,
+                                    Autor = c.Autor
+                                }).FirstOrDefault();
 
                 if (ct != null)
                 {
-                    ct.CategoriaId = cnt.CategoriaId.ToString();
+                    ct.CategoriaId = cnt.CategoriaId;
                     ct.Titulo = cnt.Titulo;
                     ct.Texto = cnt.Texto;
                     ct.Autor = cnt.Autor;
 
-                    dbLoc.Entry(ct).State = System.Data.Entity.EntityState.Modified;
+                    dbLoc.Entry(ct).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                     dbLoc.SaveChanges();
 
-                    imagem img = (from i in dbLoc.imagem
-                                  where i.ImagemId == cnt.UrlImg
-                                  select i).FirstOrDefault();
+                    var img = (from i in dbLoc.Imagems
+                                  where i.Imagemid == cnt.UrlImg
+                                  select new Imagem()
+                                  {
+                                      ImagemId = new Guid(i.Imagemid),
+                                      ParentId = new Guid(i.Parentid)
+                                  }).FirstOrDefault();
 
                     if (img != null)
                     {
-                        relimagemconteudo ric = new relimagemconteudo()
+                        Relimagemconteudo ric = new Relimagemconteudo()
                         {
-                            imagemid = img.ImagemId,
-                            parentid = ct.ConteudoId
+                            Imagemid = img.ImagemId.ToString(),
+                            Parentid = ct.ConteudoId.ToString()
                         };
 
-                        dbLoc.relimagemconteudo.Add(ric);
+                        dbLoc.Relimagemconteudos.Add(ric);
                         dbLoc.SaveChanges();
                     }
                 }
@@ -81,37 +92,41 @@ namespace CMSXBLL.Repositorio
         public void CreateContent()
         {
             Conteudo cnt = (Conteudo)propLocal.conteudo;
-            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
+            using (CmsxDbContext dbLoc = new CmsxDbContext())
             {
                 string cid = cnt.ConteudoId.ToString();
 
-                conteudo ct = new conteudo()
+                var ct = new CMSXData.Models.Conteudo()
                 {
-                    CategoriaId = cnt.CategoriaId.ToString(),
-                    AreaId = cnt.AreaId.ToString(),
-                    ConteudoId = cnt.ConteudoId.ToString(),
+                    Cateriaid = cnt.CategoriaId.ToString(),
+                    Areaid = cnt.AreaId.ToString(),
+                    Conteudoid = cnt.ConteudoId.ToString(),
                     Titulo = cnt.Titulo,
                     Texto = cnt.Texto,
                     Autor = cnt.Autor,
-                    DataInclusao = DateTime.Now
+                    Datainclusao = DateTime.Now
                 };
 
-                dbLoc.conteudo.Add(ct);
+                dbLoc.Conteudos.Add(ct);
                 dbLoc.SaveChanges();
 
-                imagem img = (from i in dbLoc.imagem
-                              where i.ImagemId == cnt.UrlImg
-                              select i).FirstOrDefault();
+                var img = (from i in dbLoc.Imagems
+                              where i.Imagemid == cnt.UrlImg
+                              select new Imagem()
+                              {
+                                  ImagemId = new Guid(i.Imagemid),
+                                  ParentId = new Guid(i.Parentid)
+                              }).FirstOrDefault();
 
                 if (img != null)
                 {
-                    relimagemconteudo ric = new relimagemconteudo()
+                    Relimagemconteudo ric = new Relimagemconteudo()
                     {
-                        imagemid = img.ImagemId,
-                        parentid = cnt.ConteudoId.ToString()
+                        Imagemid = img.ImagemId.ToString(),
+                        Parentid = cnt.ConteudoId.ToString()
                     };
 
-                    dbLoc.relimagemconteudo.Add(ric);
+                    dbLoc.Relimagemconteudos.Add(ric);
                     dbLoc.SaveChanges();
                 }
             }
@@ -142,18 +157,18 @@ namespace CMSXBLL.Repositorio
         {
             List<Conteudo> lcont = new List<Conteudo>();
             string contid = propLocal.conteudoId.ToString();
-            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
+            using (CmsxDbContext dbLoc = new CmsxDbContext())
             {
-                var clst = from c in dbLoc.conteudo
-                           join i in dbLoc.imagem
-                              on c.ConteudoId equals i.ConteudoId into imgGroup
+                var clst = from c in dbLoc.Conteudos
+                           join i in dbLoc.Imagems
+                              on c.Conteudoid equals i.Conteudoid into imgGroup
                            from im in imgGroup.DefaultIfEmpty()
-                           where c.ConteudoId == contid
+                           where c.Conteudoid == contid
                            select new
                            {
-                               ConteudoId = c.ConteudoId,
-                               AreaId = c.AreaId,
-                               CategoriaId = c.CategoriaId,
+                               ConteudoId = c.Conteudoid,
+                               AreaId = c.Areaid,
+                               CategoriaId = c.Cateriaid,
                                Titulo = c.Titulo,
                                Texto = c.Texto,
                                UrlImg = im.Url
@@ -210,19 +225,19 @@ namespace CMSXBLL.Repositorio
         {
             string appId = propLocal.appId.ToString();
             List<Conteudo> lstcon = new List<Conteudo>();
-            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
+            using (CmsxDbContext dbLoc = new CmsxDbContext())
             {
-                var clst = from c in dbLoc.conteudo
-                           join i in dbLoc.imagem
-                              on c.ConteudoId equals i.ConteudoId into imgGroup
+                var clst = from c in dbLoc.Conteudos
+                           join i in dbLoc.Imagems
+                              on c.Conteudoid equals i.Conteudoid into imgGroup
                            from im in imgGroup.DefaultIfEmpty()
-                           where dbLoc.areas.Any(a => a.AreaId == c.AreaId && a.AplicacaoId == appId)
-                             || dbLoc.categoria.Any(t => t.CategoriaId == c.CategoriaId && t.AplicacaoId == appId)
+                           where dbLoc.Areas.Any(a => a.Areaid == c.Areaid && a.Aplicacaoid == appId)
+                             || dbLoc.Cateria.Any(t => t.Cateriaid == c.Cateriaid && t.Aplicacaoid == appId)
                            select new
                            {
-                               ConteudoId = c.ConteudoId,
-                               AreaId = c.AreaId,
-                               CategoriaId = c.CategoriaId,
+                               ConteudoId = c.Conteudoid,
+                               AreaId = c.Areaid,
+                               CategoriaId = c.Cateriaid,
                                Titulo = c.Titulo,
                                Texto = c.Texto,
                                UrlImg = im.Url
@@ -260,16 +275,16 @@ namespace CMSXBLL.Repositorio
             List<Conteudo> lstcon = new List<Conteudo>();
             string appObj = lprop.appid;
             string appid = lprop.appid.ToString();
-            var lstViewContent = from c in db.categoria
-                                 join cn in db.conteudo
-                                     on c.CategoriaId equals cn.CategoriaId into catGroup
+            var lstViewContent = from c in db.Cateria
+                                 join cn in db.Conteudos
+                                     on c.Cateriaid equals cn.Cateriaid into catGroup
                                  from cnc in catGroup.DefaultIfEmpty()
-                                 where c.AplicacaoId == appid
+                                 where c.Aplicacaoid == appid
                                  select new Conteudo
                                  {
-                                     AreaId = new Guid(cnc.AreaId),
-                                     ConteudoId = new Guid(cnc.ConteudoId),
-                                     CategoriaId = new Guid(cnc.CategoriaId),
+                                     AreaId = new Guid(cnc.Areaid),
+                                     ConteudoId = new Guid(cnc.Conteudoid),
+                                     CategoriaId = new Guid(cnc.Cateriaid),
                                      Titulo = cnc.Titulo,
                                      Texto= cnc.Texto
                                  };

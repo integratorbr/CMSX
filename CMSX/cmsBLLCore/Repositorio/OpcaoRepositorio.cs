@@ -4,7 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Data.SqlClient;
 using ICMSX;
-using CMXDBContext;
+using CMSXData;
+using CMSXData.Models;
 using System.Dynamic;
 
 namespace CMSXBLL.Repositorio
@@ -21,7 +22,7 @@ namespace CMSXBLL.Repositorio
             string bc = prop.banco;
             int parm = prop.parms;
             lprop = prop;
-            db = new CMXDBContextEntities();
+            db = new CmsxDbContext();
             dal.MakeConnection((ExpandoObject)prop);
         }
 
@@ -43,12 +44,12 @@ namespace CMSXBLL.Repositorio
             return applista;
         }
 
-        public List<Opcao> Helper(IEnumerable<opcao> appdata)
+        public List<Opcao> Helper(IEnumerable<Opcao> appdata)
         {
             if (appdata == null) return null;
             List<Opcao> applista = new List<Opcao>();
 
-            foreach (opcao at in appdata)
+            foreach (Opcao at in appdata)
             {
                 Opcao _app = Opcao.ObterNovaOpcao();
                 _app.Nome = at.Nome;
@@ -56,7 +57,7 @@ namespace CMSXBLL.Repositorio
                 _app.OpcaoId = new System.Guid(at.OpcaoId.ToString());
                 _app.AtributoId = at.AtributoId;
                 _app.Qtd = int.Parse(at.Qtd.ToString());
-                _app.Estoque = (at.Estoque == 1 ? true : false);
+                _app.Estoque = at.Estoque;
 
                 applista.Add(_app);
             }
@@ -65,16 +66,16 @@ namespace CMSXBLL.Repositorio
 
         public void CriaOpcao(Opcao atp)
         {
-            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
+            using (CmsxDbContext dbLoc = new CmsxDbContext())
             {
-                opcao at = new opcao();
+                var at = new CMSXData.Models.Opcao();
                 at.Nome         = atp.Nome;
                 at.Descricao    = atp.Descricao;
-                at.OpcaoId      = atp.OpcaoId.ToString();
-                at.AtributoId   = atp.AtributoId;
+                at.Opcaoid      = atp.OpcaoId.ToString();
+                at.Atributoid   = atp.AtributoId;
                 at.Qtd          = atp.Qtd;
                 at.Estoque      = (byte)(atp.Estoque == true ? 1 : 0);
-                dbLoc.opcao.Add(at);
+                dbLoc.Opcaos.Add(at);
                 dbLoc.SaveChanges();
             }
         }
@@ -84,9 +85,17 @@ namespace CMSXBLL.Repositorio
             string atrId = lprop.atrId.ToString();
             //long lng = long.Parse(atrId);
             Guid id = new Guid(atrId);
-            IEnumerable<opcao> lst = from opt in db.opcao
-                                     where opt.AtributoId == id
-                                        select opt;
+            IEnumerable<Opcao> lst = from opt in db.Opcaos
+                                     where opt.Atributoid == id
+                                        select new Opcao()
+                                        {
+                                            AtributoId = opt.Atributoid,
+                                            Nome = opt.Nome,
+                                            Descricao = opt.Descricao,
+                                            OpcaoId = new Guid(opt.Opcaoid),
+                                            Estoque = opt.Estoque==1?true:false,
+                                            Qtd = opt.Qtd
+                                        };
 
             return Helper(lst);
         }
@@ -99,9 +108,17 @@ namespace CMSXBLL.Repositorio
         public List<Opcao> ListaOpcaoXAtributo()
         {
             string optId = lprop.optId.ToString();
-            IEnumerable<opcao> lst = from opt in db.opcao
-                                     where opt.OpcaoId == optId
-                                     select opt;
+            IEnumerable<Opcao> lst = from opt in db.Opcaos
+                                     where opt.Opcaoid == optId
+                                     select new Opcao()
+                                     {
+                                         AtributoId = opt.Atributoid,
+                                         Nome = opt.Nome,
+                                         Descricao = opt.Descricao,
+                                         OpcaoId = new Guid(opt.Opcaoid),
+                                         Estoque = opt.Estoque == 1 ? true : false,
+                                         Qtd = opt.Qtd
+                                     };
 
             return Helper(lst);
         }

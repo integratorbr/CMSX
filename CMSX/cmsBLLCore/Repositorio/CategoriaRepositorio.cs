@@ -4,7 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 using ICMSX;
 using System.Linq;
-using CMXDBContext;
+using CMSXData;
+using CMSXData.Models;
 using System.Dynamic;
 
 namespace CMSXBLL.Repositorio
@@ -18,7 +19,7 @@ namespace CMSXBLL.Repositorio
         public void MakeConnection(dynamic prop)
         {
             dal = container.Resolve<ICategoriaDAL>();
-            db = new CMXDBContextEntities();
+            db = new CmsxDbContext();
             string bc = prop.banco;
             int parm = prop.parms;
             lprop = prop;
@@ -78,15 +79,15 @@ namespace CMSXBLL.Repositorio
             return applista;
         }
 
-        public List<Categoria> Helper(IEnumerable<categoria> entLista)
+        public List<Categoria> Helper(IEnumerable<Categoria> entLista)
         {
             if (entLista == null) return null;
             List<Categoria> catLista = new List<Categoria>();
 
-            foreach (categoria cat in entLista)
+            foreach (Categoria cat in entLista)
             {
                 Categoria _cat = Categoria.ObterNovaCategoria();
-                _cat.CategoriaId = new System.Guid(cat.CategoriaId);
+                _cat.CategoriaId = cat.CategoriaId;
                 _cat.Nome = cat.Nome;
                 _cat.Descricao = cat.Descricao;
                 catLista.Add(_cat);
@@ -108,11 +109,11 @@ namespace CMSXBLL.Repositorio
 
         public void CategoriaRapida()
         {
-            var catObj = lprop.categoria;
-            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
+           /* var catObj = lprop.categoria;
+            using (CmsxDbContext dbLoc = new CmsxDbContext())
             {
 
-                categoria ncat = new categoria();
+                var ncat = new Categoria();
                 ncat.Nome = catObj.Nome;
                 ncat.AplicacaoId = catObj.AplicacaoId.ToString();
                 ncat.Descricao = catObj.Descricao;
@@ -123,9 +124,9 @@ namespace CMSXBLL.Repositorio
                     ncat.CategoriaIdPai = catObj.CategoriaIdPai.ToString();
                 }
 
-                dbLoc.categoria.Add(ncat);
+                dbLoc.Cateria.Add(ncat);
                 dbLoc.SaveChanges();
-            }   
+            }   */
         }
 
         public List<Categoria> ListaCategoria()
@@ -141,18 +142,36 @@ namespace CMSXBLL.Repositorio
         public List<Categoria> ListaCategoriaPai()
         {
             string appid = lprop.appid.ToString();
-            IEnumerable<categoria> lst = from cat in db.categoria
-                                         where ((cat.AplicacaoId == appid)&&(cat.CategoriaIdPai==null))
-                                         select cat;
+            IEnumerable<Categoria> lst = from cat in db.Cateria
+                                         where ((cat.Aplicacaoid == appid)&&(cat.Cateriaidpai==null))
+                                         select new Categoria()
+                                         {
+                                             CategoriaId = new Guid(cat.Cateriaid),
+                                             CategoriaIdPai = new Guid(cat.Cateriaidpai),
+                                             Nome = cat.Nome,
+                                             Descricao = cat.Descricao,
+                                             TipoCategoria = cat.Tipocateria??0,
+                                             AplicacaoId = new Guid(cat.Aplicacaoid),
+                                             NomePai = string.Empty
+                                         };
             return Helper(lst);
         }
 
         public List<Categoria> ListaSubCategoria()
         {
             string cpid = lprop.cpid;
-            IEnumerable<categoria> lst = from cat in db.categoria
-                                         where cat.CategoriaIdPai == cpid
-                                         select cat;
+            IEnumerable<Categoria> lst = from cat in db.Cateria
+                                         where cat.Cateriaidpai == cpid
+                                         select new Categoria()
+                                         {
+                                             CategoriaId = new Guid(cat.Cateriaid),
+                                             CategoriaIdPai = new Guid(cat.Cateriaidpai),
+                                             Nome = cat.Nome,
+                                             Descricao = cat.Descricao,
+                                             TipoCategoria = cat.Tipocateria ?? 0,
+                                             AplicacaoId = new Guid(cat.Aplicacaoid),
+                                             NomePai = string.Empty
+                                         };
             return Helper(lst);
         }
 

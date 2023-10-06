@@ -4,7 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 using ICMSX;
 using System.Linq;
-using CMXDBContext;
+using CMSXData;
+using CMSXData.Models;
 using System.Dynamic;
 
 namespace CMSXBLL.Repositorio
@@ -16,7 +17,7 @@ namespace CMSXBLL.Repositorio
         public void MakeConnection(dynamic prop)
         {
             dal = container.Resolve<ICategoriaDAL>();
-            db = new CMXDBContextEntities();
+            db = new CmsxDbContext();
             string bc = prop.banco;
             int parm = prop.parms;
             lprop = prop;
@@ -32,22 +33,27 @@ namespace CMSXBLL.Repositorio
         {
             
             string appid = lprop.appid;
-            IEnumerable<unidades> lst = from uni in db.unidades
-                                        select uni;
+            IEnumerable<Unidade> lst = from uni in db.Unidades
+                                        select new Unidade()
+                                        {
+                                            unidadeId = uni.Unidadeid,
+                                            nome = uni.Nome,
+                                            sigla = uni.Sigla
+                                        };
             return Helper(lst);
         }
 
-        public List<Unidade> Helper(IEnumerable<unidades> entLista)
+        public List<Unidade> Helper(IEnumerable<Unidade> entLista)
         {
             if (entLista == null) return null;
             List<Unidade> oLista = new List<Unidade>();
 
-            foreach (unidades obj in entLista)
+            foreach (Unidade obj in entLista)
             {
                 Unidade _un = Unidade.ObterNovaUnidade();
-                _un.unidadeId = obj.UnidadeId;
-                _un.nome = obj.Nome;
-                _un.sigla = obj.Sigla;
+                _un.unidadeId = obj.unidadeId;
+                _un.nome = obj.nome;
+                _un.sigla = obj.sigla;
                 oLista.Add(_un);
             }
             return oLista;

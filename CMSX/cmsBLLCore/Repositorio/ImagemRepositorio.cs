@@ -7,7 +7,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.Entity;
 using System.Linq;
-using CMXDBContext;
+using CMSXData;
+using CMSXData.Models;
 
 namespace CMSXBLL.Repositorio
 {
@@ -25,7 +26,7 @@ namespace CMSXBLL.Repositorio
         public void MakeConnection(dynamic prop)
         {
             //dal = container.Resolve<>();
-            db = new CMXDBContextEntities();
+            db = new CmsxDbContext();
             string bc = prop.banco;
             int parm = prop.parms;
             lprop = prop;
@@ -43,39 +44,50 @@ namespace CMSXBLL.Repositorio
             string imgId = lprop.imagemId.ToString();
             string arId = lprop.areaid.ToString();
 
-            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
+            using (CmsxDbContext dbLoc = new CmsxDbContext())
             {
                 ///limpando as imagens previas
-                imagem imgold = (from im in dbLoc.imagem
-                                 where im.AreaId == arId
+                var imgold = (from im in dbLoc.Imagems
+                                 where im.Areaid.ToString() == arId
                                  select im).FirstOrDefault();
                 if (imgold != null)
                 {
-                    imgold.AreaId = null;
-                    dbLoc.Entry(imgold).State = System.Data.Entity.EntityState.Modified;
+                    imgold.Areaid = arId;
+                    dbLoc.Entry(imgold).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                     dbLoc.SaveChanges();
                 }
 
 
                 ///vinculando nova imagem
-                imagem img = (from im in dbLoc.imagem
-                              where im.ImagemId == imgId
+                var img = (from im in dbLoc.Imagems
+                              where im.Imagemid.ToString() == imgId
                               select im).First();
-                img.ImagemId = imgId;
-                img.AreaId = arId;
-                dbLoc.Entry(img).State = System.Data.Entity.EntityState.Modified;
+                img.Imagemid = imgId;
+                img.Areaid = arId;
+                dbLoc.Entry(img).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 dbLoc.SaveChanges();
             }
         }
 
         public List<Imagem> Galeria()
         {
-            using (CMXDBContextEntities dbloc = new CMXDBContextEntities())
+            using (CmsxDbContext dbloc = new CmsxDbContext())
             {
                 string pId = lprop.areaid.ToString();
-                IEnumerable<imagem> lst = from img in db.imagem
-                                          where img.AreaId == pId
-                                          select img;
+                IEnumerable<Imagem> lst = from img in db.Imagems
+                                          where img.Areaid == pId
+                                          select new Imagem()
+                                          {
+                                              ImagemId = new Guid(img.Imagemid),
+                                              AreaId = new Guid(img.Areaid),
+                                              ConteudoId = new Guid(img.Conteudoid),
+                                              Altura = img.Altura??0,
+                                              Largura = img.Largura??0,
+                                              Url = img.Url,
+                                              Descricao = img.Descricao,
+                                              ParentId = new Guid(img.Parentid),
+                                              TipoId = new Guid(img.Tipoid)
+                                          };
                 return Helper(lst);
             }
         }
@@ -87,12 +99,23 @@ namespace CMSXBLL.Repositorio
 
         public List<Imagem> GaleriaParentId()
         {
-            using(CMXDBContextEntities dbloc = new CMXDBContextEntities())
+            using(CmsxDbContext dbloc = new CmsxDbContext())
             {
                 string pId = lprop.pId.ToString();
-                IEnumerable<imagem> lst = from img in db.imagem
-                                           where img.ParentId == pId
-                                           select img;
+                IEnumerable<Imagem> lst = from img in db.Imagems
+                                          where img.Parentid == pId
+                                          select new Imagem()
+                                          {
+                                              ImagemId = new Guid(img.Imagemid),
+                                              AreaId = new Guid(img.Areaid),
+                                              ConteudoId = new Guid(img.Conteudoid),
+                                              Altura = img.Altura ?? 0,
+                                              Largura = img.Largura ?? 0,
+                                              Url = img.Url,
+                                              Descricao = img.Descricao,
+                                              ParentId = new Guid(img.Parentid),
+                                              TipoId = new Guid(img.Tipoid)
+                                          };
                 return Helper(lst);
             }
         }
@@ -115,11 +138,11 @@ namespace CMSXBLL.Repositorio
             return applista;
         }
 
-        public List<Imagem> Helper(IEnumerable<imagem> appdata)
+        public List<Imagem> Helper(IEnumerable<Imagem> appdata)
         {
             if (appdata == null) return null;
             List<Imagem> applista = new List<Imagem>();
-            foreach (imagem dr in appdata)
+            foreach (Imagem dr in appdata)
             {
                 Imagem _app = Imagem.ObterImagem();
                 _app.Url = dr.Url;
@@ -137,15 +160,15 @@ namespace CMSXBLL.Repositorio
 
         public void InsereImagemGaleria()
         {
-            using (CMXDBContextEntities dbloc = new CMXDBContextEntities())
+            using (CmsxDbContext dbloc = new CmsxDbContext())
             {
-                imagem im = new imagem();
+                var im = new CMSXData.Models.Imagem();
                 Imagem obj = (Imagem)lprop.imgObj;
-                im.ImagemId = obj.ImagemId.ToString();
-                im.ParentId = obj.ParentId.ToString();
+                im.Imagemid = obj.ImagemId.ToString();
+                im.Parentid = obj.ParentId.ToString();
                 im.Url = obj.Url;
-                im.TipoId = obj.TipoId.ToString();
-                dbloc.imagem.Add(im);
+                im.Tipoid = obj.TipoId.ToString();
+                dbloc.Imagems.Add(im);
                 dbloc.SaveChanges();
             }
         }

@@ -4,8 +4,9 @@ using System.Data;
 using System.Linq;
 using System.Data.SqlClient;
 using ICMSX;
-using CMXDBContext;
+using CMSXData;
 using System.Dynamic;
+using CMSXData.Models;
 
 namespace CMSXBLL.Repositorio
 {
@@ -21,7 +22,6 @@ namespace CMSXBLL.Repositorio
             string bc = prop.banco;
             int parm = prop.parms;
             lprop = prop;
-            db = new CMXDBContextEntities();
             dal.MakeConnection((ExpandoObject)prop);
         }
 
@@ -43,18 +43,18 @@ namespace CMSXBLL.Repositorio
             return applista;
         }
 
-        public List<Atributo> Helper(IEnumerable<atributo> appdata)
+        public List<Atributo> Helper(IEnumerable<Atributo> appdata)
         {
             if (appdata == null) return null;
             List<Atributo> applista = new List<Atributo>();
 
-            foreach (atributo at in appdata)
+            foreach (Atributo at in appdata)
             {
                 Atributo _app = Atributo.ObterNovoAtributo();
                 _app.Nome = at.Nome;
                 _app.Descricao = at.Descricao;
                 _app.AtributoId = int.Parse(at.AtributoId.ToString());
-                _app.ProdutoId = new System.Guid(at.ProdutoId);
+                _app.ProdutoId = at.ProdutoId;
 
                 applista.Add(_app);
             }
@@ -70,13 +70,13 @@ namespace CMSXBLL.Repositorio
 
         public void CriaAtributo(Atributo atp)
         {
-            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
+            using (CmsxDbContext dbLoc = new CmsxDbContext())
             {
-                atributo at = new atributo();
+                var at = new CMSXData.Models.Atributo();
                 at.Nome = atp.Nome;
                 at.Descricao = atp.Descricao;
-                at.ProdutoId = atp.ProdutoId.ToString();
-                dbLoc.atributo.Add(at);
+                at.Produtoid = atp.ProdutoId.ToString() ;
+                dbLoc.Atributos.Add(at);
                 dbLoc.SaveChanges();
             }
         }
@@ -84,8 +84,13 @@ namespace CMSXBLL.Repositorio
         public List<Atributo> ListaAtributo()
         {
             string prodId = lprop.prodId.ToString();
-            IEnumerable<atributo> lst = from atrib in db.atributo
-                                        select atrib;
+            IEnumerable<Atributo> lst = from atrib in db.Atributos
+                                        select new Atributo()
+                                        {
+                                            AtributoId = 0,
+                                            Descricao = atrib.Descricao,
+                                            Nome = atrib.Nome
+                                        };
 
             return Helper(lst);
         }
@@ -93,9 +98,14 @@ namespace CMSXBLL.Repositorio
         public List<Atributo> ListaAtributoXProduto()
         {
             string prodId = lprop.prodId.ToString();
-            IEnumerable<atributo> lst = from atrib in db.atributo
-                                        where atrib.ProdutoId == prodId
-                                        select atrib;
+            IEnumerable<Atributo> lst = from atrib in db.Atributos
+                                        where atrib.Produtoid == prodId
+                                        select new Atributo()
+                                        {
+                                            AtributoId = 0,
+                                            Descricao = atrib.Descricao,
+                                            Nome = atrib.Nome
+                                        };
 
             return Helper(lst);
         }

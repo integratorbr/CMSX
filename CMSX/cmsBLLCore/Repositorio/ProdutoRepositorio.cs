@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data;
 using ICMSX;
-using CMXDBContext;
+using CMSXData;
+using CMSXData.Models;
 using System.Dynamic;
 
 namespace CMSXBLL.Repositorio
@@ -17,7 +18,7 @@ namespace CMSXBLL.Repositorio
         public void MakeConnection(dynamic prop)
         {
             dal = container.Resolve<IProdutoDAL>();
-            db = new CMXDBContextEntities();
+            db = new CmsxDbContext();
             string bc = prop.banco;
             int parm = prop.parms;
             lprop = prop;
@@ -28,9 +29,16 @@ namespace CMSXBLL.Repositorio
         {
             
             string appid = lprop.appid.ToString();
-            IEnumerable<produto> lst = from prod in db.produto
-                                       where prod.AplicacaoId == appid
-                                       select prod;
+            IEnumerable<Produto> lst = from prod in db.Produtos
+                                       where prod.Aplicacaoid == appid
+                                       select new Produto()
+                                       {
+                                          CategoriaId = new Guid(prod.Cateriaid),
+                                          Nome = prod.Nome,
+                                          ProdutoId = new Guid(prod.Produtoid),
+                                          Descricao = prod.Descricao,
+                                          Valor = prod.Valor??0M
+                                       };
             return Helper(lst);
         }
 
@@ -41,23 +49,23 @@ namespace CMSXBLL.Repositorio
 
         public void CriaProduto(Produto prod)
         {
-            using (CMXDBContextEntities db = new CMXDBContextEntities())
+            using (CmsxDbContext db = new CmsxDbContext())
             {
-                produto p = new produto();
-                p.AplicacaoId = prod.AplicacaoId.ToString();
-                p.CategoriaId = prod.CategoriaId.ToString();
-                p.ProdutoId = prod.ProdutoId.ToString();
+                var p = new CMSXData.Models.Produto();
+                p.Aplicacaoid = prod.AplicacaoId.ToString();
+                p.Cateriaid = prod.CategoriaId.ToString();
+                p.Produtoid = prod.ProdutoId.ToString();
                 p.Nome = prod.Nome;
                 p.Descricao = prod.Descricao;
-                p.DescricaCurta = prod.DescricaoCurta;
-                p.DetalheTecnico = prod.DetalheTecnico;
+                p.Descricacurta = prod.DescricaoCurta;
+                p.Detalhetecnico = prod.DetalheTecnico;
                 p.Valor = prod.Valor;
-                p.sku = prod.Sku;
-                p.PagSeguroKey = prod.PagSeguroBotao;
+                p.Sku = prod.Sku;
+                p.Pagsegurokey = prod.PagSeguroBotao;
                 p.Destaque = prod.Destaque;
-                p.DataInicio = DateTime.Now;
+                p.Datainicio = DateTime.Now;
                 p.Tipo = prod.Tipo;
-                db.produto.Add(p);
+                db.Produtos.Add(p);
                 db.SaveChanges();
             }
         }
@@ -67,7 +75,7 @@ namespace CMSXBLL.Repositorio
         /// </summary>
         /// <param name="moddata">DataTable</param>
         /// <returns>List</returns>
-        public List<Produto> Helper(System.Data.DataTable moddata)
+        public List<Produto> Helper(DataTable moddata)
         {
             if (moddata == null) return null;
             List<Produto> modlista = new List<Produto>();
@@ -102,23 +110,23 @@ namespace CMSXBLL.Repositorio
         /// </summary>
         /// <param name="entLista">IEnumerable&lt;produto&gt;</param>
         /// <returns>List&lt;Produto&gt;</returns>
-        public List<Produto> Helper(IEnumerable<produto> entLista)
+        public List<Produto> Helper(IEnumerable<Produto> entLista)
         {
             if (entLista == null) return null;
             List<Produto> prodLista = new List<Produto>();
 
-            foreach (produto prd in entLista)
+            foreach (Produto prd in entLista)
             {
                 Produto _prod = Produto.ObterNovoProduto();
-                _prod.ProdutoId = new System.Guid(prd.ProdutoId);
+                _prod.ProdutoId = prd.ProdutoId;
                 _prod.Nome = prd.Nome;
                 _prod.Descricao = prd.Descricao;
                 _prod.Tipo = prd.Tipo==null?0:(int)prd.Tipo;
                 _prod.Destaque = (int)prd.Destaque;
                 _prod.DetalheTecnico = prd.DetalheTecnico;
                 _prod.Valor = (decimal)prd.Valor;
-                _prod.Sku = prd.sku;
-                _prod.PagSeguroBotao = prd.PagSeguroKey;
+                _prod.Sku = prd.Sku;
+                _prod.PagSeguroBotao = prd.PagSeguroBotao;
 
                 prodLista.Add(_prod);
             }
@@ -128,9 +136,16 @@ namespace CMSXBLL.Repositorio
         public List<Produto> ListaProdutoXCategoria()
         {
             string catid = lprop.ctId.ToString();
-            IEnumerable<produto> lst = from prod in db.produto
-                                       where prod.CategoriaId == catid
-                                       select prod;
+            IEnumerable<Produto> lst = from prod in db.Produtos
+                                       where prod.Cateriaid == catid
+                                       select new Produto()
+                                       {
+                                           CategoriaId = new Guid(prod.Cateriaid),
+                                           Nome = prod.Nome,
+                                           ProdutoId = new Guid(prod.Produtoid),
+                                           Descricao = prod.Descricao,
+                                           Valor = prod.Valor ?? 0M
+                                       };
             return Helper(lst);
         }
 
@@ -138,9 +153,16 @@ namespace CMSXBLL.Repositorio
         {
             
             string prodId = lprop.prodId.ToString();
-            IEnumerable<produto> lst = from prod in db.produto
-                                       where prod.ProdutoId == prodId
-                                       select prod;
+            IEnumerable<Produto> lst = from prod in db.Produtos
+                                       where prod.Produtoid == prodId
+                                       select new Produto()
+                                       {
+                                           CategoriaId = new Guid(prod.Cateriaid),
+                                           Nome = prod.Nome,
+                                           ProdutoId = new Guid(prod.Produtoid),
+                                           Descricao = prod.Descricao,
+                                           Valor = prod.Valor ?? 0M
+                                       };
             return Helper(lst);
         }
 
@@ -156,17 +178,17 @@ namespace CMSXBLL.Repositorio
 
         public void InativaProduto(Produto prod)
         {
-            using (CMXDBContextEntities dbLoc = new CMXDBContextEntities())
+            using (CmsxDbContext dbLoc = new CmsxDbContext())
             {
                 string prodid = prod.ProdutoId.ToString();
                 ///limpando as imagens previas
-                produto pr = (from p in dbLoc.produto
-                                where p.ProdutoId == prodid
+                var pr = (from p in dbLoc.Produtos
+                                where p.Produtoid == prodid.ToString()
                                 select p).FirstOrDefault();
                 if (pr != null)
                 {
-                    pr.DataFinal = DateTime.Now;
-                    dbLoc.Entry(pr).State = System.Data.Entity.EntityState.Modified;
+                    pr.Datafinal = DateTime.Now;
+                    dbLoc.Entry(pr).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                     dbLoc.SaveChanges();
                 }
             }

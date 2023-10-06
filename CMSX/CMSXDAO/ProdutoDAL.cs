@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using ICMSX;
-using CMXDBContext;
+using CMSXData;
+using CMSXData.Models;
 
 namespace CMSXDAO
 {
@@ -44,12 +45,12 @@ namespace CMSXDAO
             throw new NotImplementedException();
         }
 
-        public IEnumerable<produto> ListaProduto()
+        public IEnumerable<Produto> ListaProduto()
         {
             string appid = _localProps.appid;
-            CMXDBContextEntities db = new CMXDBContextEntities();
-            IEnumerable<produto> lst = from prod in db.produto
-                                       where prod.AplicacaoId == appid
+            CmsxDbContext db = new CmsxDbContext();
+            IEnumerable<Produto> lst = from prod in db.Produtos
+                                       where prod.Aplicacaoid == appid
                                        select prod;
             return lst;
         }

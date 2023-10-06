@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using CMXDBContextContext;
+using CMSXData;
+using CMSXData.Models;
 
 namespace CMSXBLL.Repositorio
 {
@@ -18,6 +19,6 @@ namespace CMSXBLL.Repositorio
         List<Aplicacao> ListaAplicacaoForAutocomplete();
         string[] ListaAplicacaoPorNome();
         List<Aplicacao> Helper(DataTable appdata);
-        List<Aplicacao> Helper(IEnumerable<CMXDBContext.aplicacao> appdata);
+        List<Aplicacao> Helper(IEnumerable<Aplicacao> appdata);
     }
 }

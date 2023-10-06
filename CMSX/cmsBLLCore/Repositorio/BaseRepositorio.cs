@@ -2,7 +2,8 @@
 using Castle.Windsor.Configuration.Interpreters;
 using Castle.Windsor.Installer;
 using Castle.MicroKernel.Registration;
-using CMXDBContext;
+using CMSXData;
+using CMSXData.Models;
 using System.Data.Entity;
 
 namespace CMSXBLL.Repositorio
@@ -11,7 +12,7 @@ namespace CMSXBLL.Repositorio
     {
         protected IWindsorContainer container;
         protected dynamic lprop;
-        protected CMXDBContextEntities db;
+        protected CmsxDbContext db;
 
         protected BaseRepositorio()
         {
