@@ -141,7 +141,7 @@ namespace CMSXBLL.Repositorio
                     {
                         aplicacoes.Add(new Aplicacao()
                         {
-                            AplicacaoId = a.AplicacaoId??new Guid(),
+                            AplicacaoId = a.AplicacaoId,
                             Nome = a.Nome,
                             Url = a.Url,
                             DataFinal = a.DataFinal.ToString() ?? new DateTime().ToString(),

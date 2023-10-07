@@ -101,9 +101,9 @@ public partial class CmsxDbContext : DbContext
 
         modelBuilder.Entity<Aplicacao>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("aplicacao");
+            entity.HasKey(e => e.Aplicacaoid).HasName("aplicacaoIdPK");
+
+            entity.ToTable("aplicacao");
 
             entity.Property(e => e.Aplicacaoid)
                 .HasDefaultValueSql("uuid_generate_v4()")

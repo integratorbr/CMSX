@@ -57,7 +57,7 @@ public partial class Aplicacao
     /// <summary>
     /// Id unico da aplicacao
     /// </summary>
-    public Guid? Aplicacaoid { get; set; }
+    public Guid Aplicacaoid { get; set; }
 
     public bool? Isactive { get; set; }
 }

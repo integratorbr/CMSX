@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "CMSXUI"
+  "defaultProject": "CMSXUI",
+  "cli": {
+    "analytics": false
+  }
 }
