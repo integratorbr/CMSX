@@ -12,7 +12,7 @@ export class UsuarioComponent {
   public userList: UsuarioData[] = [];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<UsuarioData[]>(baseUrl + 'Usuarios').subscribe(result => {
+    http.get<UsuarioData[]>(baseUrl + 'usuarios').subscribe(result => {
       this.userList = result;
     }, error => console.error(error));
   }
@@ -36,6 +36,6 @@ export class UsuarioComponent {
 }
 
 interface UsuarioData {
-  Userid: string;
-  Nome: string;
+  userid: string;
+  nome: string;
 }
